@@ -38,7 +38,7 @@
                             i.ic-triangle-right
                     .sketch.ms_12
 
-            .sketch-container(v-if="storyActive",  @click="toggleStory", :class="{'active' : storyActive}")
+            .sketch-container(v-show="storyActive",  @click="toggleStory", :class="{'active' : storyActive}")
                 .frame-container#dummy
                     .frame.large
                         .bubble.col
@@ -250,7 +250,7 @@
                                 .ttp-txt.top détails et options
                                 i.ic-drag-2
 
-                        .second-part(v-if="selectedSkotch")
+                        .second-part(v-show="selectedSkotch")
                             .sk-description
                                 p.pre-wrap.quote-style Même réal qu'Inception. Concept autour du temps inédit selon David.
                             .sk-options
@@ -267,7 +267,7 @@
                                     b.ttp-txt.right Feedback
                                 button.icon.search(@click="searchOpen", :class="{'active': searchOpened}", aria-label="demo : recherche rapide")
                                     i.ic-search
-                                    .search-options(v-if="searchOpened")
+                                    .search-options(v-show="searchOpened")
                                         a.google(href="https://www.google.com/search?q= + Tenet" target="_blank")
                                             button.icon(aria-label="demo : rechercher sur google")
                                                 i.ic-sh-google
@@ -303,7 +303,7 @@
                                 .ttp-txt.top détails et options
                                 i.ic-drag-2
 
-                        .second-part(v-if="selectedSkotch2")
+                        .second-part(v-show="selectedSkotch2")
                             .sk-description
                                 p.pre-wrap.quote-style Tout le monde me saoûle avec cette série, mais apparemment, faut vraiment que je la mate.
                             .sk-options
@@ -320,7 +320,7 @@
                                     b.ttp-txt.right Feedback
                                 button.icon.search(@click="searchOpen2", :class="{'active': searchOpened2}", aria-label="demo : recherche rapide")
                                     i.ic-search
-                                    .search-options(v-if="searchOpened2")
+                                    .search-options(v-show="searchOpened2")
                                         a.google(href="https://www.google.com/search?q= + The Wire" target="_blank")
                                             button.icon(aria-label="demo : rechercher sur google")
                                                 i.ic-sh-google
@@ -357,7 +357,7 @@
                                 .ttp-txt.top détails et options
                                 i.ic-drag-2
 
-                        .second-part(v-if="selectedSkotch3")
+                        .second-part(v-show="selectedSkotch3")
                             .sk-description
                                 p.pre-wrap.quote-style Petit Bijou, série anglaise. Top 10 all time tranquillou.
                             .sk-options
@@ -374,7 +374,7 @@
                                     b.ttp-txt.right Feedback
                                 button.icon.search(@click="searchOpen3", :class="{'active': searchOpened3}", aria-label="demo : recherche rapide")
                                     i.ic-search
-                                    .search-options(v-if="searchOpened3")
+                                    .search-options(v-show="searchOpened3")
                                         a.google(href="https://www.google.com/search?q= + Fleabag" target="_blank")
                                             button.icon(aria-label="demo : rechercher sur google")
                                                 i.ic-sh-google
@@ -447,7 +447,7 @@
                             //<br> <b class="special">Cliquez</b> pour le découvrir !
                         .sketch.h-1
 
-            .sketch-container.happy(v-if="storyActive2",  @click="toggleStory2", :class="{'active' : storyActive2}")
+            .sketch-container.happy(v-show="storyActive2",  @click="toggleStory2", :class="{'active' : storyActive2}")
                 .frame-container#h0
                     .frame.large
                         .bubble.col
