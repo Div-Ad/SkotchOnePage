@@ -1,0 +1,367 @@
+#oneHelp
+    #oneHelpMenu(:class="{'opened-menu' : openedMenu}")
+
+        .action-icon(@click="toggleMenu")
+            .icon-menu
+                .bar
+                .bar
+                .bar
+            i.ic-close-24
+
+        .menu-content
+            .menu-item(@click="toggleMenu" v-scroll-to="'#trickAnchor'")
+                .section
+                    h2 Installer Skotch (PWA)
+
+            .menu-item(@click="toggleMenu" v-scroll-to="'#Search'")
+                .section
+                    h2 La Recherche Skotch
+
+            .menu-item(@click="toggleMenu" v-scroll-to="'#Order'")
+                .section
+                    h2 Ordonner ses skotchs
+
+            //.menu-item(@click="toggleMenu" v-scroll-to="'#Swipe'")
+                .section
+                    h2 Les Zones de Swipe (bientôt)
+            //.menu-item(@click="toggleMenu" v-scroll-to="'#Options'")
+            //    .section
+            //        h2 Autres Options des Skotchs
+            //.menu-item(@click="toggleMenu" v-scroll-to="'#JDC'")
+                .section
+                    h2 Le Journal des Copains (bientôt)
+            //.menu-item(@click="toggleMenu" v-scroll-to="'#Install'")
+            //    .section
+            //        h2 Installer Skotch
+
+    header.app
+        .decoration
+            i.ic-help-board
+        .logotype
+            .w-bg
+            .icon-bg
+                i.ic-skotch-empty-32-2
+            .icon-skotch
+                i.ic-sk
+
+        .app-txt
+            .app-name
+                i.ic-skotch-brand
+            .app-baseline
+                h1.m-zero
+                    span Tips
+                    span.transp50 &nbsp;&&nbsp;
+                    span fonctions avancées
+        .trans-band
+    .sub-header
+
+    #oneHelpContent
+        .welcome
+            h1.mt8.mb32 Aide
+            // p Skotch a limité ses fonctionnalités à l'essentiel.
+            p Si vous êtes curieux, vous avez probablement cliqué et swipé un peu partout, mais quelques fonctions méritent sûrement quelques précisions !
+            p#trickAnchor Découvrez dans cette courte rubrique d'aides quelques tips et astuces pour devenir 10<sup>ème</sup> Dan de Skotch. Cliquez sur le menu pour accéder à la section qui vous intéresse !
+
+        //.sep-triangle
+        section.pwa-install.nb
+            header
+                h2 Installer Skotch comme "PWA"
+
+            body
+
+                p Sur Mobile, via n'importe quel navigateur (chrome, safari, etc.) Skotch se comporte exactement comme une application.
+
+                    | &nbsp;C'est ce qu'on appelle une Progressive Web App, dite PWA. Vous n'êtes donc pas obligé de passer par l'Appstore ou Google Play.
+                    br
+                p Voici comment l'installer sur votre mobile, selon votre navigateur.
+
+                h3 Safari
+                .offset
+                    p Cliquez sur le bouton de partage
+                    .detail-group.mono-icon.img-inside
+                        img.sf-share(src="~assets/PWAH_share-safari.svg")
+                    p Cliquez sur l'option « Sur l'écran d'accueil »
+                    .detail-group.mono-icon.img-inside
+                        img.sf-add(src="~assets/PWAH_add-safari.svg")
+                    p Validez en cliquant sur "Ajouter"
+
+                h3 Chrome
+                .offset
+                    p.mb4 Normalement, Chrome vous propose automatiquement d'installer l'application.
+                    p.mb4 Si ce n'est pas le cas, cliquez sur le menu :
+                    .detail-group.mono-icon.img-inside
+                        img.menu(src="~assets/menu.svg")
+                    p ... puis cliquez sur « Installer l'application » :
+                    .detail-group.mono-icon.img-inside
+                        img.menu(src="~assets/app-install-chrome.svg")
+
+                h3 Firefox
+                .offset
+                    p.mb4 Normalement, Firefox vous propose automatiquement d'installer l'application.
+                    p.mb4 Si ce n'est pas le cas, dans les anciennes versions de Firefox, dans la barre d'adresse, cliquez sur l'icone d'ajout :
+                    .detail-group.mono-icon.img-inside
+                        img.ff-add(src="~assets/PWAH_add-firefox.svg")
+                    p Ou, cliquez sur le menu ...
+                    .detail-group.mono-icon.img-inside
+                        img.menu(src="~assets/menu.svg")
+                    p ... puis cliquez sur « Installer » :
+                    .detail-group.mono-icon.img-inside
+                        img.menu(src="~assets/app-install-firefox.svg")
+
+                .flexVC
+                    img.icon-skotch(src="~assets/appicons/appicon-maskable-128.png")
+                    h4.m-zero Fermez votre navigateur et cliquez sur l'icône Skotch qui a dû s'ajouter dans vos applications ou à votre écran d'accueil.
+
+        //.sep-triangle.r_180#Search
+        //.sep-triangle.jump-here
+        .jump-here#Search
+        section
+            header
+                h2 La Recherche Skotch
+            body
+                p En ouvrant un skotch, vous pouvez accéder à une petite loupe qui vous permet de déclencher une recherche sur différents sites ou applications à partir du titre de votre skotch.
+                h3 La recherche de base
+                .offset
+                    p Après avoir cliqué sur l'icone ouvrant le détails et les options des skotchs ...
+                    .detail-group
+                        i.ic-options-b24
+                    p ... vous accédez à la deuxième partie du skotch. Parmi les actions possibles, il y a la recherche.
+                    p En cliquant sur la loupe ...
+                    .detail-group
+                        i.ic-search
+                    p ... vous vous pourrez ouvrir un mini menu et lancer une recherche sur google, ou sur wikipédia.
+                    h3 Essayez-moi !
+                    .skotch
+                        .first-part.selected
+                            .sk-group
+                                .sk-info-container
+                                    .sk-name Fleabag
+                                    .skl-tag Amazon
+                            button.icon.sk-details-trigger.icon.ttp-trig
+                                i.ic-options-b24.active
+                                .ttp-txt.top détails et options
+                                i.ic-drag-2
+
+                        .second-part
+                            .sk-description
+                                p.pre-wrap.quote-style Petit Bijou, série anglaise. Top 10 all time tranquillou.
+                            .sk-options
+                                icon-tip.delete(i="bin-2" c="rgb(50,50,50)" size="24" tip="Supprimer" )
+                                icon-tip.update(i="pen" c="rgb(50,50,50)" size="24" tip="Modifier" )
+                                icon-tip.bookmark(i="star-24" c="rgb(50,50,50)" size="24" tip="Marquer comme important" )
+                                //icon-tip.feedback(i="skotchback-trigger-24" c="rgb(50,50,50)" size="24" tip="Faire un Feedback" )
+
+                                button.icon.search(@click="searchOpen3", :class="{'active': searchOpened3}", aria-label="demo : recherche rapide")
+                                    i.ic-search
+                                    .search-options(v-if="searchOpened3")
+                                        a.google(href="https://www.google.com/search?q= + Fleabag" target="_blank")
+                                            button.icon(aria-label="demo : rechercher sur google")
+                                                i.ic-sh-google
+                                        a.wiki(href="https://fr.wikipedia.org/w/index.php?cirrusUserTesting=glent_m0&search= + Fleabag" target="_blank")
+                                            button.icon(aria-label="demo : rechercher sur wikipedia")
+                                                i.ic-sh-wiki
+
+                                icon-tip.share(i="share-24" c="rgb(50,50,50)" size="24" tip="Suggérer à mes copains" )
+                                icon-tip.archive(i="sktheque-add-24" c="rgb(50,50,50)" size="24" tip="Ranger dans ma skotchotèque" )
+
+                            .sk-informations
+                                span Skotché par&nbsp;
+                                    span.author
+                                        span vous-même
+                                    span.creation-date &nbsp;le 14/03/2021
+                h3 La recherche contextuelle
+                .offset
+                    p <b>Selon la liste</b> dans laquelle vous vous trouvez, les options de recherche changent. L'équipe Skotch vous proposera petit à petit de nouvelles options.
+                    p Pour l'instant, voici celles que nous avons intégrées (cliquez sur chaque loupe pour tester) :
+                    .detail-group
+                        a.search-group(:href="'https://www.google.com/search?q=' + 'Fleabag'" target="_blank")
+                            .google
+                                button.icon(aria-label="Rechercher dans Google")
+                                    i.ic-sh-google
+                            h4 <b>Dans toutes les listes</b> : rechercher dans <b class="red">Google</b>
+                        a.search-group(:href="'https://fr.wikipedia.org/w/index.php?cirrusUserTesting=glent_m0&search=' + 'Fleabag'" target="_blank")
+                            .wiki
+                                button.icon(aria-label="Rechercher dans Wikipédia")
+                                    i.ic-sh-wiki
+                            h4 <b>Dans de nombreuses listes</b> : rechercher dans <b class="red">Wikipédia</b>
+                        a.search-group(:href="'https://genius.com/search?q=' + 'Fleabag'" target="_blank")
+                            .genius
+                                button.icon(aria-label="Rechercher dans Genius")
+                                    i.ic-sh-genius
+                            h4 Dans <b>« À Écouter »</b> : rechercher dans <b class="red">Genius</b>
+                        a.search-group(:href="'https://www.leslibraires.fr/recherche/?q=' + 'Fleabag' + '&f_shipping_delay=1'" target="_blank")
+                            .libraires
+                                button.icon(aria-label="Rechercher dans Les Libraires")
+                                    i.ic-sh-libraires
+                            h4 Dans <b>« À Lire »</b> : rechercher dans <b class="red">Les Libraires</b>
+                        a.search-group(:href="'https://www.amazon.fr/s?k=' + 'Fleabag'" target="_blank")
+                            .amazon
+                                button.icon(aria-label="Rechercher dans Amazon")
+                                    i.ic-sh-amazon
+                            h4 Dans <b>« À Acheter »</b> : rechercher dans <b class="red">Amazon</b>
+                        a.search-group(:href="'https://www.google.com/maps/search/' + 'Fleabag'" target="_blank")
+                            .maps
+                                button.icon(aria-label="Rechercher dans Maps")
+                                    i.ic-sh-maps
+                            h4 Dans <b>« À Visiter »</b> et <b>« Sorties »</b>: rechercher dans <b class="red">Maps</b>
+
+        //.sep-triangle.r_180#Order
+        //.sep-triangle.jump-here
+        .jump-here#Order
+        section
+            header
+                h2 Ordonner ses skotchs
+            body
+                h3 Trier & filtrer
+                .offset
+                    p Dans chaque liste, vous pouvez trier vos skotchs à l'aide du bouton trier :
+                    .detail-group
+                        .group.sortTriggers
+                            .icon.sort
+                                i.ic-sort-b24
+                                span.icon-helper trier
+                    p Cela va ouvrir à la fois les options de triage et filtrage.
+
+                h3 Essayez-moi !
+                .offset
+                    .filter-demo
+                        .pageTitle
+                            .title-group.sklTitle
+                                .skl-icon.mr8
+                                    i.ic-watch-list-2
+                                .skl-title
+                                    h2 À regarder
+
+                            .group.sortTriggers
+                                .icon.sort(@click="filterDisplay = !filterDisplay", :class="{'active': filterDisplay}")
+                                    i.ic-sort-b24
+                                    i.ic-close-24
+                                    span.icon-helper trier
+
+                            .group.sortOptions(v-if="filterDisplay")
+                                button.sort-group.az
+                                    .icon
+                                        .icon.a-to-z
+                                            span A
+                                            span Z
+                                        .icon.arrow
+                                            i.ic-sort-arrow-b24
+                                button.sort-group
+                                    .icon
+                                        i.ic-clock-b24
+
+                                button.sort-group.friend-sort(@click="friendFilter = !friendFilter", :class="{'selected' : friendFilter}")
+                                    .icon
+                                        i.ic-friend
+
+                        .skTagFilters(v-if="filterDisplay")
+                            .skl-tag-list
+                                .skl-tag Film
+                                .skl-tag Série
+
+                h3 Les options de Tri
+                .offset
+                    .detail-group
+                        .flex-group
+                            button.icon.sort-group.az
+                                .icon
+                                    .icon.a-to-z
+                                        span A
+                                        span Z
+                                    .icon.arrow
+                                        i.ic-sort-arrow-b24
+                            h4 Trier de A à Z
+                        .flex-group
+                            button.icon.sort-group
+                                .icon
+                                    i.ic-clock-b24
+                            h4 Trier du plus récent au plus vieux
+
+                h3 Les options de Filtre
+                .offset
+                    .detail-group
+                        .flex-group
+                            .icon
+                                i.ic-friend
+                            h4 Ne montrer que les skotchs de mes copains
+                        .flex-group
+                            .skl-tag Catégorie
+                            h4 N'afficher que les skotchs correspondant à la catégorie cliquée
+
+                h3 Tri personnel
+                .offset
+                    p Mais ce n'est pas tout ! Car vous pouvez aussi ordonner vos skotchs comme bon vous semble, à la main !
+                    p En faisant un <b>clic long</b> (restez appuyé une demi seconde) sur l'icone de détail des skotchs ...
+                    .detail-group
+                        i.ic-options-b24
+                    p ... vous allez activer le "<b>drag & drop</b>".
+                    p Dès que celui-ci sera actif, vous pouvez déplacer votre skotch vers le haut ou vers le bas et trier vos skotchs comme vous l'entendez.
+                    img.gif(src="~assets/h-dnd.gif")
+
+        .sep-triangle.r_180
+        .jump-here
+
+
+        //.sep-triangle.r_180#Options
+        //.sep-triangle.jump-here
+        //section
+        //    header
+        //        h2 Les Options des Skotchs
+        //    body
+        //        h3 Créer un skotch
+        //        h3 Partager
+        //        h3 Faire un feedback
+        //        h3 Marquer comme important
+        //        h3 Supprimer
+        //        h3 Modifier
+        //        h3 Rechercher
+        //        h3 La skotchothèque
+
+
+        //.sep-triangle.r_180#Swipe
+        //.sep-triangle.jump-here
+        //section
+            header
+                h2 Les zones de swipe
+            body
+                h3 D'un onglet à l'autre !
+                h3 ouvrir et fermer le menu
+                h3 ouvrir et fermer les notifs
+
+
+        //.sep-triangle.r_180#JDC
+        //.sep-triangle.jump-here
+        //section
+            header
+                h2 Le Journal des Copains
+            body
+                h3 Un vrai journal
+                h3 Les Feedbacks
+
+
+        //.sep-triangle.r_180#Install
+        //.sep-triangle.jump-here
+        //section
+        //    header
+        //        h2 Installer Skotch
+        //    body
+        //        h3 PWA ?
+
+
+
+        //.welcome
+            h1.m-zero Skoucou.
+            .content
+                .sep-triangle
+                .text
+                    i.ic-liked.fs64
+                    .mt32
+                    p Bientôt à cette adresse, des trucs et astuces, tips et autres tutos gif pour devenir 10<sup>ème</sup> dan de Skotch.
+                    p Plus aucune fonction n'aura de secret pour vous.
+                        br
+                        | Et ça, c'est important.
+                .sep-triangle.r_180
+            a.end(href="/")
+                i.ic-skotch-brand.fs10
+
+

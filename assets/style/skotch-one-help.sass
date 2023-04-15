@@ -1,0 +1,517 @@
+#oneHelp
+    +setSquare(100%)
+    display: block
+    
+    .welcome, .sep-triangle, #oneHelpContent section
+        max-width: 720px
+        margin: auto
+        
+    #oneHelpContent
+        width: 100%
+        line-height: 1.5em
+    
+        //////////
+        // HTML //
+        //////////
+        
+        h1
+            font: 600 48px/42px$condensed
+            color: $c-bnf
+            .blue
+                color: $c-bnf
+        
+        span
+            margin-left: 0.5ch
+        
+        h2
+            margin: 12px 0 24px 0
+            font: 600 32px/32px $condensed
+            color: $c-bnf
+        
+        h3
+            color: $c-i-green
+            text-transform: initial
+            margin: 32px 0 16px 0
+            font: 400 24px/24px $condensed
+            &:before
+                content: "\e9cc"
+                color: $c-i-green
+                font-family: $icon
+                margin-right: 8px
+                position: relative
+                font-size: 24px
+                top: 1px
+        h4
+            margin: 0
+        p
+            line-height: 1.5em
+            color: $c-g80
+        p i
+            font-size: 24px
+        b
+            font-weight: 600
+        b.red
+            font-weight: 500
+            color: $c-bnf-red
+        img
+            max-width: 100%
+            &.icon-skotch
+                +setSquare(64px)
+                border-radius: 4px
+                margin: 16px
+            &.gif
+                min-width: 336px
+                
+    
+    ////////////
+    // HEADER //
+    ////////////
+    
+    header.app
+        .decoration
+            position: absolute
+            top: 0
+            right: 0
+            margin: 32px
+            i.ic-help-board
+                color: $tw-01
+                font-size: 96px
+        .logotype
+            position: relative
+            z-index: 1
+            .icon-bg i
+                color: $c-i-green
+            .w-bg
+                background-color: $c-i-green
+        .trans-band
+            background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0) 100%)
+            z-index: 0
+
+    //////////////////
+    // INTRODUCTION //
+    //////////////////
+    
+    .welcome
+        text-align: justify
+        padding: 32px
+        font-size: 1.2em
+
+    
+    //////////////
+    // Sections //
+    //////////////
+    
+    #oneHelpContent
+        
+        .jump-here
+            height: 64px
+        
+        section
+            background-color: white
+            text-align: left
+            padding: 16px
+            box-shadow: 0 0 16px 0 $t-01
+            border-radius: 3px
+    
+            body
+                min-height: 96px
+                border-radius: 3px
+            .offset
+                padding-left: 32px
+                
+        .detail-group
+            background: $c-white
+            padding: 12px
+            box-shadow: inset 0 0 8px 0 $tg-01
+            border-radius: 3px
+            margin: 0 0 12px 0
+            width: unset
+            display: inline-block
+            &.mono-icon
+                margin: 8px 0
+            &.img-inside
+                +setActionIcon(48px)
+                img
+                    min-height: 24px
+                
+            .sortTriggers .icon.sort
+                align-items: center
+                margin: 0
+            i
+                font-size: 24px
+        
+        .flex-group
+            margin-bottom: 12px
+            +flexVC
+            &:last-of-type
+                margin-bottom: 0
+            .icon
+                +setIcon(32px)
+                i
+                    font-size: 24px
+            h4
+                margin-left: 8px
+                
+        a.search-group
+            +flexVC
+            margin-bottom: 12px
+            &:last-of-type
+                margin-bottom: 0
+            button
+                margin: 0 8px 0 0
+                i
+                    font-size: 24px
+                
+        #PageTitle, .pageTitle
+            +setFlexBox(initial, 90px, center, space-between, row)
+            position: relative
+            border-bottom: 3px solid $c-g215
+            
+            .title-group.sklTitle
+                +setFixedHeight(64px)
+                +flexVC
+                .icon
+                    margin-right: 16px
+                    i
+                        font-size: 48px
+                h2
+                    font: 400 24px/24px $condensed
+                    margin: 0
+                    color: $c-g50
+            
+            .toggle
+                transform: rotate(270deg)
+                i
+                    font-size: 24px
+                &.active
+                    transform: rotate(90deg)
+            
+            .help
+                i
+                    font-size: 32px
+                    color: $c-g205
+                &.active i
+                    color: $c-i-blue
+                &:hover
+                    i
+                        color: $c-i-blue
+            .group
+                +flexVC
+            
+            .group-vert
+                +flexVC
+                flex-direction: column
+
+        .pageTitle
+            padding: 0 16px
+            cursor: pointer
+            position: relative
+            background-color: white
+            z-index: 2
+            .skl-icon i
+                font-size: 32px
+    
+        .skTagFilters
+            border-radius: 0 0 4px 4px
+            overflow: hidden
+            position: relative
+            z-index: 1
+    
+        .skTagFilters, .skSort
+            width: 100%
+            min-height: 24px
+            display: flex
+            align-items: flex-start
+            margin-left: 0
+            +setTopAnimation(-48px)
+            animation-duration: 0.15s!important
+        
+            i.ic-unarchive, i.ic-bin-2, i.ic-ok-c-b24, i.ic-star-24, i.ic-unarchive-arrow
+                position: relative
+                top: 2px
+                font-size: 14px
+                margin-left: 4px
+        
+            .skl-tag-list
+                width: 100%
+        
+            .skl-tag
+                cursor: pointer
+                margin: 0!important
+                border-radius: 0
+                font-size: 13px
+                border-right: 1px solid darken($c-bnf-red, 7%)
+                border-bottom: 1px solid darken($c-bnf-red, 7%)
+                &:last-child
+                    border-radius: 0 0 4px 0
+                &:hover
+                    background-color: darken($c-bnf-red, 7%)
+                &.active
+                    background-color: $c-bnf-gold
+                    border-right: 1px solid darken($c-bnf-gold, 7%)
+                    border-bottom: 1px solid darken($c-bnf-gold, 7%)
+        .sortTriggers
+            height: 32px
+            .icon.sort
+                align-items: flex-end
+            .icon-helper
+                text-align: right
+                margin-top: 4px
+                font: 500 9px/9px $small
+                text-transform: uppercase
+                transition: 0.15s
+            .filter, .sort
+                position: relative
+                bottom: -2px
+                flex-direction: column
+                +setActionIcon(32px)
+                margin-left: 4px
+                i
+                    font-size: 24px
+                i.ic-close-24
+                    display: none
+                    position: relative
+                    top: -2px
+                &.active i, &:hover i, &:hover span
+                    color: $c-bnf-red
+                &.active span.icon-helper, &.active i.ic-sort-b24
+                    display: none
+                &.active i.ic-close-24
+                    display: block
+        
+        .sortOptions
+            +setFixedHeight(44px)
+            position: absolute
+            right: 54px
+            top: calc(50% - 44px / 2)
+            z-index: 2
+            background-color: $c-bnf-red
+            border-radius: 3px
+            animation: openit 0.15s
+            i, span
+                color: white
+        
+        button.sort-group
+            +flexHVC
+            +setSquare(44px)
+            cursor: pointer
+            background-color: transparent
+            height: 100%
+            transition: none
+            &.friend-sort:after
+                content: '\e976'
+                display: block!important
+                font-family: $icon
+                font-size: 16px
+                line-height: 16px
+                position: absolute
+                top: calc(50% - 16px / 2)
+                right: -10px
+                color: $c-bnf-red
+            &.friend-sort.selected
+                border-radius: 0 3px 3px 0
+                &:after
+                    color: $c-bnf-gold!important
+            &.selected
+                background-color: $c-bnf-gold
+                border-radius: 0
+            .icon.arrow
+                transform: rotateX(180deg)
+            .icon.a-to-z
+                +setFlexBox(24px, 44px, center, center, column)
+                margin-left: -8px
+            .a-to-z span
+                +setSquare(12px)
+                font: 13px/13px $condensed
+                position: relative
+            &.az.selected
+                border-radius: 3px 0 0 3px
+            .icon
+                +setActionIcon(44px)
+                i
+                    font-size: 24px
+            .icon.arrow
+                +setFlexBox(6px, 44px, center, center, row)
+                transition: 0.25s
+        
+    //////////
+    // MENU //
+    //////////
+            
+    #oneHelpMenu
+        margin-left: -100vw
+        width: 640px
+        transition: 0.25s ease-in-out
+        background-color: $c-bnf
+        z-index: 9999
+        
+        .action-icon
+            +setActionIcon(48px)
+            background-color: $c-i-green
+            font-size: 24px
+            transition: 0.25s
+            margin: 16px
+            position: fixed
+            top: 0
+            left: 0
+            border-radius: 50%
+            i.ic-close-24
+                font-size: 0
+        .icon-menu
+            +setActionIcon(32px)
+            flex-direction: column
+            overflow: hidden
+            i
+                color: $c-bnf
+            .bar
+                height: 3px
+                border-radius: 1.5px
+                width: 16px
+                margin: 1.5px 0
+                background-color: rgba($c-bnf,0.9)
+                z-index: 1
+        
+        &.opened-menu
+            margin-right: 0
+            margin-left: 0
+            transition: 0.25s ease-in-out
+            box-shadow: 0 0 8px 0px $t-01
+            
+
+            .action-icon
+                background-color: lighten($c-bnf, 7%)
+                color: $c-white
+                transform: rotate(-90deg)
+                border-radius: 5%
+                .icon-menu
+                    +setActionIcon(0px)
+                i.ic-close-24
+                    font-size: 24px
+                    
+        .menu-content
+            width: 100%
+            +custom8pxScrollBar
+            padding: 16px 80px
+            +flexHVC
+            flex-wrap: wrap
+            .menu-item
+                +flexVC
+                cursor: pointer
+                justify-content: center
+                height: 48px
+                width: 100%
+                min-width: 240px
+                color: white
+                border-bottom: 1px solid $tw-01
+                &:last-child
+                    border-bottom: none
+                h2
+                    font: 500 16px/16px $condensed
+                &:hover, &:focus
+                    background-color: rgba(0,0,0,0.1)
+    
+@media (max-width: 600px)
+    #oneHelp
+        .welcome
+            font-size: 1rem
+        
+        #oneHelpContent
+            section
+                .offset
+                    padding-left: 0
+            .pageTitle
+                +setFixedHeight(64px)
+                padding: 0
+                margin: 0
+                border-bottom: 2px solid $c-g215
+                .toggle
+                    i
+                        font-size: 16px
+                .help
+                    i
+                        font-size: 32px
+                        &:hover
+                            color: $c-g205
+                    &.active i:hover
+                        color: $c-i-blue
+            
+                .title-group.sklTitle
+                    +setFixedHeight(48px)
+                    .icon
+                        margin-right: 8px
+                        i
+                            font-size: 32px
+                    .skl-title h2
+                        font: 400 20px/28px $condensed
+                        color: $c-g50
+            .pageTitle
+                padding: 0 4px
+                .skl-icon i
+                    font-size: 32px
+                .icon.filter:hover span
+                    color: $c-g50
+    
+            .skTagFilters
+                .skl-tag
+                    margin: 0
+                    min-width: calc(100% / 4)
+                    font-size: 12px
+        
+            .sortTriggers
+                .filter, .sort
+                    &:hover i, &:hover span
+                        color: $c-g80
+                    &.active i, &.active span
+                        color: $c-g80
+                    &.active:hover i, &.active:hover span
+                        color: $c-g80!important
+
+        
+            #sortOptions, .sortOptions
+                right: 40px
+                
+        #oneHelpMenu
+            width: 100vw
+            max-width: 600px
+            margin-right: -100vw
+            .action-icon
+                position: fixed
+                top: initial
+                left: initial
+                bottom: 0
+                right: 0
+                +setActionIcon(56px)
+        
+        #oneHelpMenu.opened-menu
+            bottom: 0
+            right: 0
+        
+        header.app
+            .decoration
+                margin: 16px
+                i.ic-help-board
+                    font-size: 48px
+
+@media (max-width: 360px)
+    #oneHelp
+        #oneHelpContent
+            section
+                padding: 12px
+    
+            .detail-group.mono-icon.img-inside
+                img
+                    margin-left: 0
+           
+            img.icon-skotch
+                +setSquare(64px)
+                border-radius: 4px
+                margin: 0px 12px 0 0
+                
+            img.gif
+                margin-left: -6px
+                +setFixedWidth(336px)
+        
+        
+            
+                
+    

@@ -1,0 +1,540 @@
+#onePage
+    header.app(v-scroll-to="'#onePage'")
+        .logotype
+            .w-bg
+            .icon-bg
+                i.ic-skotch-empty-32-2
+            .icon-skotch
+                i.ic-sk
+
+        .app-txt
+            .app-name
+                i.ic-skotch-brand(aria-label="Skotch")
+                //sup.beta beta
+            .app-baseline
+                h1
+                    span Choses à Noter
+                    span.transp50 &nbsp;&&nbsp;
+                    span Trucs à Partager
+        .trans-band
+
+    .sub-header
+
+    #onePageContent.one-page-container
+        #introduction
+            .trig(@click="toggleStory", :class="{'active' : !storyActive}")
+                .frame.large
+                    //.icon.play
+                        i.ic-triangle-right
+                    .bubble.col
+                        //p Tout comme Pierre, <br>vous perdez vos notes&nbsp; et les conseils de vos potes ?
+                        p Vous perdez vos notes <br>et les conseils de vos potes ?
+                        .play-it
+                            .icon
+                                .sketch.play-sketch-2
+                                //i.ic-triangle-right
+                            //span Découvrez <br>sa douloureuse histoire ...
+                        //.icon.play
+                            i.ic-triangle-right
+                    .sketch.ms_12
+
+            .sketch-container(v-if="storyActive",  @click="toggleStory", :class="{'active' : storyActive}")
+                .frame-container#dummy
+                    .frame.large
+                        .bubble.col
+                            p Vous perdez vos notes <br>et les conseils de vos potes ?
+                            .play-it
+                                .icon.reload
+                                    .sketch.reload-sketch
+                                    //i.ic-reset
+                            //p <b class="special mt16">Cliquez</b> pour découvrir <br>sa douloureuse histoire ...
+                        .sketch.ms_12
+
+                .frame-container#s1
+                    .frame.large
+                        .bubble.left
+                            span On s'mate une série&nbsp;? <br>j'm'ennuie
+                        .bubble.right
+                            span Ça tombe bien,<br>un pote m'en a conseillé une !
+                        .sketch.large.ms_1
+
+                .frame-container#s2
+                    .frame.large
+                        .bubble
+                            span Alors, j'ai noté ça où ?
+                        .sketch._2
+
+                .frame-container#s3
+                    .frame.large
+                        .sketch._3
+
+                .frame-container#s4
+                    .frame.large
+                        .sketch._4
+
+                .frame-container
+                    .frame.large#s5
+                        .bubble
+                            span Flûte ... <br>En rappel peut-être ?
+                        .sketch._5
+
+                .frame-container
+                    .frame.large#s6
+                        .sketch.ms_6
+
+                .frame-container
+                    .frame.large#s7
+                        .bubble
+                            span Nope.
+                        .sketch._7
+
+                .frame-container
+                    .frame.large#s8
+                        .bubble
+                            span Un email à moi-même ! <br> Gardé en non lu.
+                        .sketch._8
+
+                .frame-container
+                    .frame#s9
+                        .sketch._9
+
+                .frame-container
+                    .frame#s10
+                        .bubble
+                            span Bordel.
+                        .sketch._10
+
+                .frame-container
+                    .frame.large#s11
+                        .bubble.left
+                            span Appelle ton pote.
+                        .bubble.right
+                            span Bah, c'était y'a 2 mois, tu parles qu'il s'en souvient
+                        .sketch.ms_11
+
+                .frame-container
+                    .frame.large#s12
+                        .bubble
+                            span C'était sur WhatsApp ... <br> sûrement ...
+                        .sketch.ms_12
+
+                .frame-container
+                    .frame.large#s13
+                        .sketch._13_alt
+
+                .frame-container
+                    .frame.large#s14
+                        .sketch._14_alt
+
+                .frame-container
+                    .frame#s15.shake
+                        .bubble
+                            span.red FFFFFFFFFFFFFF UUUUUUUUUUUU
+                        .sketch._15
+
+                .frame-container
+                    .frame.large#s16
+                        .bubble
+                            span Allez, bonne nuit.
+                        .sketch._16
+
+
+            a.go.active(v-scroll-to="'#goHere'", :class="{'active' : storyActive}")
+                .text
+                    h2 Skotch va vous aider.
+                .icon#goHere
+                    i.ic-arrow
+
+        .sep-triangle.mt32
+
+        section#whatIsSkotch
+            .quote
+                h1.h2-style « L'app ultime de prise de notes et de conseils entre copains.&nbsp;»
+            .demo-container
+                #skotchListDemo.part
+                    .title
+                        h3 skotch, c'est + de 15 listes pratiques ...
+                        p Des listes prédéfinies pour <b>tout noter</b>, avec des sous catégories sous forme de tag pour <b>encore mieux classer</b> vos skotchs lorsque vous les créez.
+                        p Il n’y a que 5 listes qui vous intéressent? Pas de panique, <b>vous avez la main</b> à tout moment pour <b>organiser les listes comme vous l’entendez.</b>
+
+                    .skl-container
+                        .skotchlist.skl_18
+                            .skl-icon
+                                .icon
+                                    i
+                            .skl-title
+                                span À Regarder
+                            .sk-counter
+                                .icon
+                                    i.ic-skotch-bg-2.list-display
+                                span.numbers.list-display 15
+
+                        .skotchlist.skl_13
+                            .skl-icon
+                                .icon
+                                    i
+                            .skl-title
+                                span À écouter
+                            .sk-counter
+                                .icon
+                                    i.ic-skotch-bg-2.list-display
+                                span.numbers.list-display 4
+
+                        .skotchlist.skl_15
+                            .skl-icon
+                                .icon
+                                    i
+                            .skl-title
+                                span À Lire
+                            .sk-counter
+                                .icon
+                                    i.ic-skotch-bg-2.list-display
+                                span.numbers.list-display 2
+
+                        .skotchlist.skl_7
+                            .skl-icon
+                                .icon
+                                    i
+                            .skl-title
+                                span À Bricoler
+                            .sk-counter
+                                .icon
+                                    i.ic-skotch-bg-2.list-display
+                                span.numbers.list-display 3
+
+                        .skotchlist.skl_9.w-100
+                            .skl-icon
+                                .icon
+                                    i
+                            .skl-title
+                                span À Siroter
+                            .sk-counter
+                                .icon
+                                    i.ic-skotch-bg-2.list-display
+                                span.numbers.list-display 1
+                        .skl-tag-container.mb16.w-100
+                            .skl-tag Vin Rouge
+                            .skl-tag Vin Blanc
+                            .skl-tag Vin Rosé
+                            .skl-tag Bulles
+                            .skl-tag Spiritueux
+                            .skl-tag Digestif
+                            .skl-tag Bière
+                            .skl-tag Soft
+                            .skl-tag Cocktail
+                            .skl-tag Mocktail
+
+                #skotchDemo.part
+                    .title
+                        h3 ... de jolies notes en forme de skotch ...
+                        p Dans chaque liste, vous pouvez <b>créer</b> de nouveaux skotchs, <b>trier</b>, filtrer, partager</b> et <b>retrouver les skotchs envoyés par vos copains</b>.
+                        p Cliquez sur un skotch pour l'ouvrir : Découvrez les détails, les options et actions standards, <b>effectuez des recherches rapides</b> grâce à la fonction de recherche contextuelle, <b>partagez</b>, ou <b>envoyez un feedback à vos copains</b> ...
+
+                    .skl-head.skl_18
+                        .skl-icon
+                            .icon
+                                i
+                        .skl-title
+                            span À Regarder
+
+                    .skotch
+                        .first-part(@click="selectSkotch", :class="{'selected': selectedSkotch}")
+                            .sk-group
+
+                                .sk-info-container
+                                    .sk-name Tenet
+                                    .skl-tag Film
+
+                            button.icon.sk-details-trigger.icon.ttp-trig(aria-label="afficher les détails et options du skotch")
+                                i.ic-options-b24(:class="{'active' : selectedSkotch}")
+                                .ttp-txt.top détails et options
+                                i.ic-drag-2
+
+                        .second-part(v-if="selectedSkotch")
+                            .sk-description
+                                p.pre-wrap.quote-style Même réal qu'Inception. Concept autour du temps inédit selon David.
+                            .sk-options
+                                button.icon.delete(aria-label="demo : supprimer ce skotch")
+                                    i.ic-bin-2
+                                button.ttp-trig.icon.update(aria-label="demo : modifier ce skotch")
+                                    .ttp-txt.top Modifier
+                                    i.ic-pen
+                                button.ttp-trig.icon.pin(aria-label="demo : marquer comme important")
+                                    .ttp-txt.top.big Marquer comme important
+                                    i.ic-star-24
+                                //button.ttp-trig.icon.skotchback
+                                    i.ic-skotchback-trigger-24
+                                    b.ttp-txt.right Feedback
+                                button.icon.search(@click="searchOpen", :class="{'active': searchOpened}", aria-label="demo : recherche rapide")
+                                    i.ic-search
+                                    .search-options(v-if="searchOpened")
+                                        a.google(href="https://www.google.com/search?q= + Tenet" target="_blank")
+                                            button.icon(aria-label="demo : rechercher sur google")
+                                                i.ic-sh-google
+                                        a.wiki(href="https://fr.wikipedia.org/w/index.php?cirrusUserTesting=glent_m0&search= + Tenet" target="_blank")
+                                            button.icon(aria-label="demo : rechercher sur wikipedia")
+                                                i.ic-sh-wiki
+
+                                button.ttp-trig.icon.share(aria-label="demo : suggérer ce skotch à mes copains")
+                                    .ttp-txt.top.big Suggérer à mes copains
+                                    i.ic-share-24
+                                //button.ttp-trig.icon.archive
+                                    .ttp-txt.left.big Ranger dans ma skotchotèque
+                                    i.ic-sktheque-add-24
+
+                            .sk-informations
+                                span Skotché par&nbsp;
+                                    span.author
+                                        span
+                                        span vous-même
+                                        span.red
+                                    span.creation-date &nbsp;le 25/02/2021
+
+                    .skotch
+                        .first-part(@click="selectSkotch2", :class="{'selected': selectedSkotch2}")
+                            .sk-group
+
+                                .sk-info-container
+                                    .sk-name The Wire
+                                    .skl-tag Série
+
+                            button.icon.sk-details-trigger.icon.ttp-trig(aria-label="afficher les détails et options du skotch")
+                                i.ic-options-b24(:class="{'active' : selectedSkotch2}")
+                                .ttp-txt.top détails et options
+                                i.ic-drag-2
+
+                        .second-part(v-if="selectedSkotch2")
+                            .sk-description
+                                p.pre-wrap.quote-style Tout le monde me saoûle avec cette série, mais apparemment, faut vraiment que je la mate.
+                            .sk-options
+                                button.icon.delete(aria-label="demo : supprimer ce skotch")
+                                    i.ic-bin-2
+                                button.ttp-trig.icon.update(aria-label="demo : modifier ce skotch")
+                                    .ttp-txt.top Modifier
+                                    i.ic-pen
+                                button.ttp-trig.icon.pin(aria-label="demo : marquer comme important")
+                                    .ttp-txt.top.big Marquer comme important
+                                    i.ic-star-24
+                                //button.ttp-trig.icon.skotchback
+                                    i.ic-skotchback-trigger-24
+                                    b.ttp-txt.right Feedback
+                                button.icon.search(@click="searchOpen2", :class="{'active': searchOpened2}", aria-label="demo : recherche rapide")
+                                    i.ic-search
+                                    .search-options(v-if="searchOpened2")
+                                        a.google(href="https://www.google.com/search?q= + The Wire" target="_blank")
+                                            button.icon(aria-label="demo : rechercher sur google")
+                                                i.ic-sh-google
+                                        a.wiki(href="https://fr.wikipedia.org/w/index.php?cirrusUserTesting=glent_m0&search= + The Wire" target="_blank")
+                                            button.icon(aria-label="demo : rechercher sur wikipedia")
+                                                i.ic-sh-wiki
+
+                                button.ttp-trig.icon.share(aria-label="demo : suggérer ce skotch à mes copains")
+                                    .ttp-txt.top.big Suggérer à mes copains
+                                    i.ic-share-24
+                                //button.ttp-trig.icon.archive
+                                    .ttp-txt.left.big Ranger dans ma skotchotèque
+                                    i.ic-sktheque-add-24
+
+                            .sk-informations
+                                span Skotché par&nbsp;
+                                    span.author
+                                        span
+                                        span vous-même
+                                        span.red
+                                    span.creation-date &nbsp;le 12/01/2021
+                    .skotch
+                        .first-part(@click="selectSkotch3", :class="{'selected': selectedSkotch3}")
+                            .sk-group
+
+                                .sk-info-container
+                                    .ct-avatar
+                                        img(src="~assets/vincent-96px.jpg" alt="^_^")
+                                    .sk-name Fleabag
+                                    .skl-tag Amazon
+
+                            button.icon.sk-details-trigger.icon.ttp-trig(aria-label="afficher les détails et options du skotch")
+                                i.ic-options-b24(:class="{'active' : selectedSkotch3}")
+                                .ttp-txt.top détails et options
+                                i.ic-drag-2
+
+                        .second-part(v-if="selectedSkotch3")
+                            .sk-description
+                                p.pre-wrap.quote-style Petit Bijou, série anglaise. Top 10 all time tranquillou.
+                            .sk-options
+                                button.icon.delete(aria-label="demo : supprimer ce skotch")
+                                    i.ic-bin-2
+
+                                //icon-tip.update(i="pen" c="rgb(50,50,50)" size="32" tip="Modifier" )
+
+                                button.ttp-trig.icon.pin(aria-label="demo : marquer comme important")
+                                    .ttp-txt.top.big Marquer comme important
+                                    i.ic-star-24
+                                button.ttp-trig.icon.skotchback(aria-label="demo : faire un retour à mon copain sur ce que j'ai pensé de ce skotch")
+                                    i.ic-skotchback-trigger-24
+                                    b.ttp-txt.right Feedback
+                                button.icon.search(@click="searchOpen3", :class="{'active': searchOpened3}", aria-label="demo : recherche rapide")
+                                    i.ic-search
+                                    .search-options(v-if="searchOpened3")
+                                        a.google(href="https://www.google.com/search?q= + Fleabag" target="_blank")
+                                            button.icon(aria-label="demo : rechercher sur google")
+                                                i.ic-sh-google
+                                        a.wiki(href="https://fr.wikipedia.org/w/index.php?cirrusUserTesting=glent_m0&search= + Fleabag" target="_blank")
+                                            button.icon(aria-label="demo : rechercher sur wikipedia")
+                                                i.ic-sh-wiki
+
+                                button.ttp-trig.icon.share(aria-label="demo : suggérer ce skotch à mes copains")
+                                    .ttp-txt.top.big Suggérer à mes copains
+                                    i.ic-share-24
+                                //button.ttp-trig.icon.archive
+                                    .ttp-txt.left.big Ranger dans ma skotchotèque
+                                    i.ic-sktheque-add-24
+
+                            .sk-informations
+                                span Skotché par&nbsp;
+                                    span.author
+                                        span
+                                        span Vincent
+                                        span.red
+                                    span.creation-date &nbsp;le 14/03/2021
+
+
+
+
+                #skotchFunctionsDetails.part
+                    .title
+                        h3 ... dans une application simple et rapide, sans fonction inutile
+                    .group
+                        .icon
+                            i.ic-add-24
+                        h4 <b>Skotch en 2 clics</b> : créez un skotch de n'importe où dans l'app.
+                    .group
+                        .icon
+                            i.ic-share-24
+                        h4 <b>Partage rapide</b> : partagez vos skotchs à partir de vos listes, ou directement à la création d'un skotch
+                    .group
+                        .icon
+                            i.ic-sktheque-24
+                        h4 <b>Skotchothèque</b> : conservez vos skotchs précieux dans votre skotchothèque pour de futurs partages ou  tout simplement pour faire vos tops dans toutes vos listes
+                    .group
+                        .icon
+                            i.ic-notification-bell
+                        h4 <b>Notifications</b> : soyez informé des demandes d'amitié, des conseils et réactions de vos copains, ...
+                    .group
+                        .icon
+                            i.ic-user-24
+                        h4 <b>Journal des copains</b> : retrouvez tous vos échanges, partages de conseils et réactions !
+                    .group
+                        .icon
+                            i.ic-sk
+                        h4 <b>Skotch est connecté</b> : transformez du contenu Youtube, Spotify, etc. en skotch en utilisant Skotch comme application de partage !
+
+                    //p Partagez vos pépites, vos films, vos bds, vos coups de coeur musiques, vos outils, vos vins et viticulteurs préférés,
+
+
+            .quote
+                h2 « Aucun algorithme ne sera aussi pertinent que le skotch d’un bon copain.&nbsp;»
+
+        .sep-triangle.r_180
+        #happyEnding
+            .trig(@click="toggleStory2", :class="{'active' : !storyActive2}")
+                .frame-container#h0-trig
+                    .frame.large
+                        .bubble.col
+                            span Pourquoi Pierre <br>a l'air si épanoui ?<br>
+                            .play-it
+                                .icon
+                                    .sketch.play-sketch-2
+                            //<br> <b class="special">Cliquez</b> pour le découvrir !
+                        .sketch.h-1
+
+            .sketch-container.happy(v-if="storyActive2",  @click="toggleStory2", :class="{'active' : storyActive2}")
+                .frame-container#h0
+                    .frame.large
+                        .bubble.col
+
+                            .play-it
+                                .icon.reload
+                                    .sketch.reload-sketch
+                                //.icon.reload
+                                    i.ic-reset
+                        .sketch.h-1
+
+                .frame-container#h1
+                    .frame.large
+                        .bubble.left
+                            span On s'mate une série&nbsp;? <br> Mon chéri
+                        .bubble.right
+                            span <br> Vincent m'en a skotché une !
+                        .sketch.h_0
+
+                .frame-container#h2
+                    .frame.large
+                        .bubble
+                            .one Skotch !
+                            .two Skotch !
+                            .three Skotch !
+                        .sketch.h-1
+
+                .frame-container#h3
+                    .frame.large
+                        .sketch.h-2
+                .frame-container#h4
+                    .frame.large
+                        .sketch.h-2-5
+                .frame-container#h5
+                    .frame.large
+                        //.sketch.heart
+                        //.sketch.h-3
+                        span(class="sketch h-3-color")
+                            span(class="path1")
+                            span(class="path2")
+        .sep-triangle.mt32
+        section.usage#usage
+            .quote
+                h2 En quelques mots ...
+            .usage-container
+                .text-group
+                    .icon.pulsate
+                        i.ic-like-b24
+                    h3 La naissance de Skotch
+                    p Les créateurs de Skotch.app en avaient marre des applis de notes mal faites, de ne jamais retrouver les petits bouts de papier sur lesquels ils avaient noté des choses à ne pas oublier, d'égarer les conseils de leurs amis, et de devoir remonter pendant des heures les fils de discussion Whatsapp et autres pour retrouver ce qu'ils cherchaient.
+                    p Ils se lassaient de conseiller dans le vent une série, un livre ou un album, persuadés que ces conseils seraient oubliés, alors que cela plairait tant à leurs si chers copains.
+                    p Ils voulaient un seul endroit pour faire tout ça en quelques clics et swipes.
+                    p Pouf, Skotch était né. Son petit coeur battait déjà fort.
+
+                .text-group
+                    .icon.spin-y
+                        i.ic-help-board
+                    h3 À quoi ça sert ?
+                    p <b>« Je me le skotche ! »</b> : Notez tout ce que vous souhaitez au bon endroit pour vous organiser, pour ne pas oublier, pour ne pas perdre ... qu'il s'agisse d'une liste de choses à voir, à écouter, ou une liste d’achats, de bricolage, ou de lieux à visiter ...
+                    p <b>« Je te l'ai skotché ! »</b> : Recommandez films, séries, musiques, livres, vins, ou tout ce que vous souhaitez à vos copains. Partagez vos trouvailles, conseillez leur des pépites directement dans leurs listes. Ils reçoivent instantanément vos conseils et décident de les accepter ou de les refuser.
+
+                .text-group
+                    .icon
+                        i.ic-meow.loading-vert
+                    h3 Pourquoi est-ce bien ?
+                    p Parce que c'est très rapide. En 2 clics vous pouvez créer ou partager un skotch.
+                    p Parce que vous n'avez pas à créer de listes. Plus de 15 listes essentielles existent. Choisissez celles qui vous plaisent et vous sont utiles.
+                    p Parce que la skotchothèque est super pratique, la fonction de recherche rapide contextuelle est géniale, les tris et filtres sont bien pensés et le journal des copains raconte la belle histoire de vos échanges.
+                    p Parce que l'interface est originale, qu'on peut swiper partout, et que ça ne ressemble à aucune autre appli. Dans Skotch, il n’y a pas de fonctions superflues.
+
+        .sep-triangle.r_180.mb32
+        .quote.last.fade
+            h2 « Partager sans fin ses coups de coeurs avec ses copains, c’est envoyer de l’amour en Skotch.&nbsp;»
+    footer(:class="{'active': userIsDoingSomething === true}")
+        a.footer-group#contact(href="mailto:appskotch@gmail.com")
+            h3 Nous contacter
+            span appskotch@gmail.com
+        a.footer-group#use(href="https://skotch.app" target='_blank')
+            h3 Utiliser Skotch
+            span skotch.app
+    //.over-footer
+    //footer
+        a.footer-group#contact(href="mailto:appskotch@gmail.com")
+            h2 Nous contacter
+            a appskotch@gmail.com
+        a.footer-group#use(href="https://skotch.app" target='_blank')
+            h2 Utiliser Skotch
+            a skotch.app
+
+

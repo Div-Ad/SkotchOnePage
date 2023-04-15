@@ -1,0 +1,234 @@
+@import "variables"
+@import "variables_colors"
+
+///////////////////
+// BASIC BUTTONS //
+///////////////////
+
+button
+    background-color: transparent
+    border-width: 0
+    cursor: pointer
+    &.switch
+        padding: 0
+    &.icon
+        background-color: initial
+    &.big-txt, &.big-text
+        font: 300 18px/18px $condensed
+    &.basic
+        @include setFixedHeight(32px)
+        min-width: 32px
+        border-radius: 2px
+        font: 300 12px/12px $condensed
+        text-transform: uppercase
+        padding: 0 8px
+        color: white
+        background-color: darken($c-i-blue, 0%)
+    &.basic:hover
+        background-color: lighten($c-i-blue, 7%)
+
+//button.icon:focus, button.skl-tag:focus
+
+button.skl-tag:focus
+    border-radius: 0!important
+button:focus
+    border-radius: 3px
+button.hidden
+    +setSquare(0px)
+    margin: 0
+    padding: 0
+    font: 300 0px/0px $slab
+button.checkbox
+    +setIcon(24px)
+    background-color: $c-theme
+    border: 3px solid $c-g205
+    color: transparent
+    border-radius: 3px
+    i
+        font-size: 16px
+    &.selected
+        //background-color: $c-blue-lt
+        color: $c-g50
+        //border: 2px solid $c-g50
+
+////////////
+// INPUTS //
+////////////
+
+input, select, textarea
+    height: 32px
+    padding: 8px
+    min-width: 240px
+    border-radius: 2px
+    border: 2px solid $t-01
+    font: 300 15px/15px $condensed
+    &:focus
+        background-color: $c-i-blue
+        color: white
+        border-color: $c-i-blue
+        outline: none
+    &::placeholder
+        font: 300 12px/16px $slab
+        color: rgba(50,50,50,0.5)
+
+optgroup
+    border: none
+
+option
+    background-color: $c-g235
+    color: $c-g80
+    font-size: 15px
+
+textarea
+    height: 96px
+
+label
+    font: 300 16px/16px $s-serif
+    margin-bottom: 8px
+
+////////////
+// SWITCH //
+////////////
+
+.switch
+    +setFixedHeight($s-icon-container/2)
+    +setFixedWidth($s-icon-container)
+    +flexVC
+    cursor: pointer
+    justify-content: flex-start
+    border-radius: 12px
+    background-color: $c-g245
+    border: 3px solid $c-g205
+    &.active
+        background-color: $c-i-blue
+        border-color: $c-i-blue
+        .dot
+            background-color: white
+            margin-left: 24px
+    .dot
+        +setSquare(18px)
+        border-radius: 50%
+        background-color: $c-g130
+        transition: 0.15s
+
+///////////
+// FORMS //
+///////////
+
+.input-group
+    position: relative
+    +flexVC
+    .icon-before, .icon-after
+        +setSquare($s-icon-container)
+        +flexHVC
+        border: 2px solid darken($c-i-blue, 0%)
+        position: absolute
+        z-index: 1
+        i
+            font-size: 24px
+            color: white
+    .icon-before
+        border-radius: 4px 0 0 4px
+        left: 0
+    .icon-after
+        border-radius: 0 4px 4px 0
+        right: 0
+
+    input
+        border-radius: 4px
+        border: 2px solid $t-02
+        +setFixedHeight($h-input)
+        width: 100%
+        &:focus
+            background-color: white
+            border-color: $c-i-blue
+
+        &.icon-before
+            border-left: $s-icon-container solid darken($c-i-blue, 0%)
+            &:focus
+                border-left: inherit solid lighten($c-i-blue, 0%)
+
+        &.icon-after
+            border-right: $s-icon-container solid darken($c-i-blue, 0%)
+            &:focus
+                border-right: inherit solid lighten($c-i-blue, 0%)
+
+
+.input-container
+    position: relative
+
+.warning
+    position: absolute
+    font: 13px/16px $condensed
+    background-color: $c-i-blue
+    color: white
+    +flexHVC
+    +setFixedHeight(30px)
+    top: calc(-28px)
+    padding: 0 6px
+    right: 0
+    border-radius: 2px 2px 0 0
+    border: 2px solid $c-i-blue
+    border-bottom: 0
+    animation: appear 0.5s
+    &:after
+        content: '\e96d'
+        font: 16px/16px $icon
+        margin-left: 8px
+        position: relative
+        top: -1px
+
+///////////
+// Range //
+///////////
+
+input[type=range].custom-slider
+    background-color: $t-07
+    -webkit-appearance: none
+    width: 100%
+    border-radius: 4px
+    margin: 0
+    padding: 0
+    +setFixedHeight(4px)
+    border: none
+    outline: none
+    -webkit-transition: .15s
+    transition: .15s
+    &:active, &:focus
+        background-color: $c-white
+        +setFixedHeight(2px)
+    &::-webkit-slider-runnable-track, &::-moz-range-track
+        +setFixedHeight(8px!important)
+
+.custom-slider:hover
+    opacity: 1
+
+.custom-slider::-moz-range-thumb
+    -webkit-appearance: none
+    appearance: none
+    width: 8px
+    height: 24px
+    border-radius: 50%
+    background: $c-i-blue
+    cursor: pointer
+
+.custom-slider::-webkit-slider-thumb
+    -webkit-appearance: none
+    width: 8px
+    height: 24px
+    border-radius: 4px
+    background: $c-i-blue
+    cursor: pointer
+
+fieldset
+    margin-top: 8px
+    background-color: white
+    border: 2px solid $tg-01
+    border-radius: 4px
+    legend
+        text-transform: uppercase
+        padding: 0 8px
+    input, textarea, select, .switch
+        margin-top: 8px
+    input, textarea, select
+        min-height: 48px

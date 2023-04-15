@@ -1,0 +1,723 @@
+#onePage, #oneHelp
+    display: flex
+    flex-direction: column
+    background: $c-white
+    
+    .ct-avatar
+        img
+            image-rendering: crisp-edges
+    .gold
+        color: $c-bnf-gold
+    
+    .quote
+        width: 100%
+        max-width: 960px
+        +flexHVC
+        text-align: center
+        margin: 32px auto
+        color: $c-bnf-gold
+        &.last
+            padding-bottom: 32px
+            color: $c-g130!important
+            
+        h2, h1.h2-style
+            font-family: $comics
+            text-transform: none
+            font-size: 38px
+            line-height: 42px
+            text-align: center
+        
+    header.app
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        flex-direction: column
+        text-align: center
+        color: $c-white
+        background: darken($c-bnf, 0)
+
+        .logotype
+            .icon-bg, .w-bg
+                margin-top: -2px
+                +setFixedWidth(48px)
+                color: $c-bnf-gold
+                animation: animatetop 0.25s 0.75s backwards
+                font-size: 48px
+            .w-bg
+                background-color: $c-bnf-gold
+            .icon-skotch
+                animation: animatetop 0.25s 0.75s backwards
+                +setIcon(48px)
+                margin-top: -8px
+                display: none
+                i
+                    font-size: 48px
+        .app-txt
+            margin-top: 12px
+            display: flex
+            flex-direction: column
+            animation: animatetop 0.25s 0s backwards
+            .app-name
+                font: 400 24px/48px $condensed
+                //margin-right: -32px
+            .app-baseline h1
+                font: 300 14px/16px $condensed
+                text-transform: uppercase
+                letter-spacing: 2px
+                word-spacing: 1px
+            .beta
+                position: relative
+                top: -16px
+                background-color: lighten($c-bnf, 21%)
+                color: lighten($c-bnf, 49%)
+                font-family: $small
+                text-transform: uppercase
+                font-size: 11px
+                line-height: 10px
+                border-radius: 2px
+                padding: 2px 4px
+                margin-left: 8px
+
+        .trans-band
+            background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0) 100%)
+            height: 128px
+            display: none
+            position: fixed
+            top: 32px
+            +setFixedWidth(48px)
+            animation: animatetop 1s 1s backwards
+    
+ 
+    .sub-header
+        background: transparent url("~assets/triangle-bl-16-bottom-down.svg") repeat no-repeat 16px
+        background-position: bottom 0 left 0
+        
+    #onePageContent.one-page-container
+        +flexVC
+        flex-wrap: wrap
+        b.special
+            color: $c-bnf-gold
+        
+        #introduction, #happyEnding
+            position: relative
+            width: 100%
+            padding-top: 32px
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            overflow: hidden
+        
+        #happyEnding
+            justify-content: center
+            //height: 75%
+            
+        .play-it
+            width: 100%
+            +flexHVC
+            span
+                text-align: left
+                margin-left: 8px
+            .icon
+                margin-top: 8px
+                +setActionIcon(48px)
+                //background-color: rgba($c-bnf-red, 1)
+                //border-radius: 50%
+                //color: white
+                //font-size: 24px
+                //box-shadow: inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.1),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12)
+                // 1px 1px 4px 1px $tg-02,
+                &.reload
+                    //background-color: rgba($c-i-blue, 1)
+                i.ic-triangle-right
+                    position: relative
+                    left: 1.5px
+                .sketch.play-sketch, .sketch.play-sketch-2, .sketch.reload-sketch
+                    font-size: 48px!important
+                .sketch.play-sketch, .sketch.play-sketch-2
+                    color: $c-bnf-red
+        
+        .trig
+            display: none
+            cursor: pointer
+            &.active
+                +flexHVC
+   
+        .sketch-container
+            +setFixedWidth(calc(100vw * 17))
+            +flexVC
+            position: relative
+            left: 0
+            animation: comics 30s
+            display: none
+            &.active
+                display: flex
+        
+        .sketch-container.happy
+            +setFixedWidth(calc(100vw * 5))
+            animation: comics-h 12s
+            .one, .two, .three
+                margin: 2px
+                animation-name: visiblenow
+                animation-duration: 0.3s
+                animation-fill-mode: backwards
+                position: relative
+            .one
+                animation-delay: 3s
+            .two
+                animation-delay: 3.3s
+            .three
+                animation-delay: 3.6s
+        
+        .frame-container
+            +setFixedWidth(100vw)
+            +flexHVC
+            &#dummy
+                animation: appear 0.5s 0.5s backwards
+ 
+        .frame
+            +flexHVC
+            position: relative
+            +setFixedHeight(calc(238px*1.5))
+            width: calc(148px*1.5)
+            &.large
+                width: calc(288px*1.5)
+            
+            .sketch.h-3-color
+                .path1:before
+                    content: "\e91d"
+                    color: #d4523e
+                .path2:before
+                    content: "\e91e"
+                    color: $c-bnf
+                    margin-left: -1.2138671875em
+
+            .bubble
+                position: absolute
+                top: 0
+                width: 100%
+                min-height: 64px
+                +flexHVC
+                padding: 0 24px
+                z-index: 2
+                color: $c-bnf
+                font-family: $comics
+                font-size: 28px
+                font-weight: 700
+                text-align: center
+                &.col
+                    display: block
+                
+                &.left, &.right
+                    width: 50%
+                &.left
+                    left: 0
+                &.right
+                    right: 0
+                span.red
+                    color: $c-bnf-red
+                button
+                    font-family: $condensed
+                    font-size: 16px
+                    +setFixedHeight(32px)
+                    width: 80px
+                    margin-top: 16px
+                    background-color: $c-bnf-gold
+                    border-radius: 3px
+                
+                    
+                    
+            .sketch
+                position: absolute
+                z-index: 1
+                color: $c-bnf
+                font-size: calc(238px*1.5)
+                &.bg-large, &.bg-small
+                    z-index: 0
+                    color: $c-white
+
+        .go
+            width: 100%
+            +flexHVC
+            flex-direction: column
+            //background: linear-gradient(to bottom, transparent, rgba($c-white, 1) 75%, transparent)
+            opacity: 0
+            margin-top: 64px
+            text-shadow: 2px 2px 1px $c-white, -2px -2px 1px $c-white, -2px 2px 1px $c-white, 2px -2px 1px $c-white
+            color: $c-bnf-gold
+            &.active
+                opacity: 1
+            .icon
+                transform: rotate(90deg)
+                +setActionIcon(48px)
+                animation: loading 2s infinite
+            i.ic-arrow
+                font-size: 24px
+            .text
+                h2
+                    text-align: center
+                    font: 700 28px/22px $comics
+        
+        section
+            width: 100%
+            position: relative
+            background-color: $c-white
+            border-radius: 4px
+            margin: 0 auto 16px
+            display: inline-flex
+            align-items: flex-start
+            
+            &#whatIsSkotch
+                background-color: white
+                border-radius: 4px
+                padding: 24px
+                display: block
+                margin: auto
+                box-shadow: 0 0 16px 0 $t-01
+                
+                .demo-container
+                    margin: 0 auto
+                    max-width: 1280px
+                    display: flex
+                    flex-wrap: wrap
+                
+                .part
+                    display: flex
+                    flex-basis: 640px
+                    flex-grow: 1
+                    flex-shrink: 1
+                    padding: 24px
+                    flex-wrap: wrap
+                    margin: 0 auto
+                    align-items: flex-start
+                    justify-content: flex-start
+                    height: 100%
+                    
+                    &.special
+                        text-align: center
+                        max-width: 100%
+                        margin: 0
+                .title
+                    margin-bottom: 16px
+                    h3
+                        font-size: 30px
+                        width: 100%
+                        text-transform: none
+                        text-align: left
+                        margin-bottom: 16px
+                    p
+                        width: 100%
+                .skl-container
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between
+                .skotchlist
+                    width: calc(50% - 8px)
+                    
+                    margin: 0 0 16px 0
+                .skotch
+                    width: 100%
+                
+                .skl-tag-container
+                    //border-left: 4px solid $t-02
+                    padding-left: 12px
+                    padding-top: 4px
+                    
+                .skl-head
+                    margin-bottom: 16px
+                    padding-bottom: 8px
+                    border-bottom: 3px solid $c-g215
+                    width: 100%
+                    +flexVC
+                    .skl-title span
+                        font-size: 24px
+                        
+                    .icon
+                        margin-right: 8px
+                        i
+                            font-size: 32px
+                    
+                p
+                    margin: 8px 0 0
+                    &:last-child
+                        margin-bottom: 8px
+                .group
+                    margin-bottom: 12px
+                    width: 100%
+                    +flexVC
+                    .icon
+                        +setIcon(32px)
+                        min-width: 32px
+                        font-size: 24px
+                        margin: 0 24px 0 0
+                    h4
+                        margin: 0
+                        font-size: 16px
+                        line-height: 18px
+                        text-align: left
+                      
+            &#usage
+                display: block
+                margin: 0 auto
+                background-color: white
+                box-shadow: 0 0 16px 0 $t-01
+            .usage-container
+                margin: 0 auto
+                max-width: 1280px
+                display: flex
+                flex-wrap: wrap
+                
+            .text-group
+                flex-basis: 360px
+                flex-shrink: 1 // means this bloc are allowed to shrink
+                flex-grow: 1 // means this bloc is allowed to grow
+                padding: 24px
+                display: flex
+                flex-direction: column
+                justify-content: flex-start
+                align-items: center
+                text-align: justify
+                
+                p
+                    
+                    width: 100%
+                h3
+                    font: 24px/24px $condensed
+                    margin: 16px 0 16px
+                p
+                    font-size: 15px
+                .icon
+                    +setIcon(80px)
+                    margin: 16px
+                    //background-color: red
+                i
+                    font-size: 80px
+                    color: $c-bnf-gold
+                i.ic-help-24, i.ic-help-board
+                    color: $c-i-blue
+                i.ic-like-b24
+                    color: $c-bnf-red
+                    
+            .logotype
+                top: 0
+                .w-bg
+                    +setFixedWidth(64px)
+                    +setFixedHeight(64px)
+                    animation: animatetop 0.25s 0.25s backwards
+                
+                .icon-skotch
+                    animation: animatetop 0.25s 0.25s backwards
+                    +setIcon(64px)
+                    margin-top: -8px
+                    i
+                        font-size: 64px
+            
+            .app-txt
+                display: flex
+                align-items: center
+                justify-content: center
+                flex-direction: column
+                text-align: center
+                animation: animatetop 0.25s 0s backwards
+                
+                .app-name
+                    font: 400 48px/80px $small
+                    text-transform: uppercase
+                    text-align: center
+                
+                .app-baseline
+                    font: 300 14px/16px $condensed
+                    text-transform: uppercase
+                    letter-spacing: 3px
+                    word-spacing: 3px
+                    text-align: center
+            
+            .trans-band
+                background-color: rgba(255,255,255,0.1)
+                position: absolute
+                top: 96px
+                +setFixedWidth(64px)
+                animation: animatebottom 1.5s 0.5s backwards
+                z-index: 0
+        
+    footer
+        +flexVC
+        background: transparent
+        color: $tg-07
+        justify-content: space-around
+        h3
+            font: 300 16px/16px $condensed
+            margin: 0 0 4px
+            text-transform: uppercase
+        span, a
+            font: 13px/13px $condensed
+            span
+                color: $tw-07
+        .footer-group
+            padding: 8px
+            width: 50%
+            height: 64px
+            text-align: center
+            +flexHVC
+            flex-direction: column
+            &#use
+                background-color: $c-bnf-gold
+                color: $c-bnf
+                border-radius: 3px
+                margin-right: 16px
+                position: fixed
+                top: 0
+                right: 0
+                z-index: 4
+                width: 128px
+                margin-top: 16px
+                animation: eyecatch-rotate 4s infinite
+                box-shadow: 0 0 8px 0px $tg-02 inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.1),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12)
+                
+            &#contact
+                background-color: $tw-01
+                color: $c-white
+                border-radius: 3px
+                position: fixed
+                top: 0
+                left: 0
+                z-index: 4
+                width: 128px
+                margin-top: 16px
+                margin-left: 16px
+                box-shadow: 0 0 8px 0px $tg-02
+                
+    
+    .sep-triangle
+        height: 16px
+        width: 100%
+        background: transparent url("~assets/triangle-w-16-bottom-up.svg") repeat no-repeat
+        background-size: 32px
+        background-position: bottom 0 left 16px
+        margin: auto
+        position: relative
+        z-index: 1
+        animation: bg-move 2s linear infinite
+        &.r_180
+            transform: rotate(180deg)
+            background-position: bottom 0 right 16px
+        &.blue
+            background: transparent url("~assets/triangle-bl-16-bottom-down.svg") repeat no-repeat
+            background-size: 32px
+        &.gold
+            background: transparent url("~assets/triangle-g-24-bottom-up.svg") repeat no-repeat
+            background-size: 32px
+
+                
+@media (max-width: 600px)
+    #onePage, #oneHelp
+        .sep-triangle.blue
+            display: none
+        .quote
+            &.last
+                margin: 0
+                padding-bottom: 80px
+                
+            h2, h1.h2-style
+                font-size: 28px
+                line-height: 28px
+                margin: 0 32px
+
+        header.app
+            align-items: flex-start
+            flex-direction: row
+            text-align: left
+            .logotype
+                margin-left: 16px
+                transition-duration: 0.25s!important
+                .icon-bg
+                    font-size: 32px
+                .w-bg
+                    +setFixedWidth(32px)
+                    +setFixedHeight(32px)
+                    margin-top: -16px
+                
+                .icon-skotch
+                    display: block
+                    +setIcon(32px)
+                    top: -32px
+                    z-index: 1
+                    position: relative
+                    i
+                        font-size: 16px
+                        color: $c-bnf
+            .app-txt
+                justify-content: center
+                +setFixedHeight(80px)
+                margin-top: 0
+                margin-left: 0
+                .app-name
+                    font: 400 16px/32px $small
+                    margin-right: 0
+                .beta
+                    top: -8px
+                .app-baseline h1
+                    font: 500 11px/12px $condensed
+                    letter-spacing: 1px
+                    word-spacing: 0.5px
+            .trans-band
+                +setFixedHeight(48px)
+                +setFixedWidth(32px)
+                display: flex
+                position: fixed
+                left: 16px
+                top: 32px
+                z-index: 0
+        
+        #onePageContent.one-page-container
+            .skotchlist
+                +setFixedWidth(100%)
+                margin-left: 0
+            .text-group
+                padding: 0 24px!important
+            .go
+                position: absolute
+                bottom: 0
+                margin: 0
+                padding: 8px
+                z-index: 1
+                
+            section#whatIsSkotch
+                margin: 0
+                padding: 12px
+                .title
+                    h3
+                        font-size: 24px
+                        line-height: 28px
+                        
+                .skl-tag-container
+                    border-left: 0px solid $t-01
+                    padding-left: 0
+                    padding-top: 4px
+                .part
+                    padding:  16px
+                
+            #introduction, #happyEnding
+                display: flex
+                width: 100vw
+                flex-direction: column
+                min-height: 75%
+                height: 100%
+                .trig.active
+                    +flexHVC
+                    text-align: center
+                .sketch-container
+                    display: none
+                    &.active
+                        display: flex
+            #happyEnding
+                min-height: calc(238px*1.2 + 16px)
+
+            section#usage
+                margin: 0
+                padding: 16px
+                .text-group
+                    //min-width: 100%
+                    margin-top: 16px
+                    h3
+                        text-align: center
+            
+        footer
+            .footer-group
+                text-align: center
+            .footer-group
+                padding: 0
+                margin: 0!important
+                +setFixedHeight(100%)
+                position: relative!important
+                width: 100%!important
+                border-radius: 0!important
+                &#use
+                    background: $c-bnf-gold url("~assets/triangle-footer-btn.svg") left/8px no-repeat repeat
+                    animation: none
+                    box-shadow: none
+                    
+                &#contact
+                    background-color: rgb(68,82,99)
+                    box-shadow: none
+
+
+@media (max-width: 600px)
+    #onePage, #oneHelp
+        #onePageContent.one-page-container
+            #introduction, #happyEnding
+                .frame
+                    +setFixedHeight(calc(238px*1.4))
+                    width: calc(148px*1.4)
+                    &.large
+                        width: calc(288px*1.4)
+                    .bubble
+                        min-height: 64px
+                        padding: 0 16px
+                        font-size: 24px
+                        line-height: 22px
+                    .sketch
+                        font-size: calc(238px*1.4)
+        section#whatIsSkotch .part
+            padding: 0 16px
+                        
+@media (max-width: 360px)
+    #onePage, #oneHelp
+        #onePageContent.one-page-container
+            #introduction, #happyEnding
+                .frame
+                    +setFixedHeight(calc(238px*1.3))
+                    width: calc(148px*1.3)
+                    &.large
+                        width: calc(288px*1.3)
+                    .bubble
+                        min-height: 64px
+                        padding: 0 16px
+                        font-size: 22px
+                        line-height: 20px
+                    .sketch
+                        font-size: calc(238px*1.3)
+                        
+@media (max-width: 320px)
+    #onePage, #oneHelp
+        #onePageContent.one-page-container
+            #introduction, #happyEnding
+                .go
+                    .text h2
+                        font: 700 24px/22px $comics
+                .frame
+                    +setFixedHeight(calc(238px*1.2))
+                    width: calc(148px*1.2)
+                    &.large
+                        width: calc(288px*1.2)
+                    .bubble
+                        min-height: 64px
+                        padding: 0 16px
+                        font-size: 20px
+                        line-height: 20px
+                    
+                    .sketch
+                        font-size: calc(238px*1.2)
+            section#whatIsSkotch .part
+                padding: 0 8px
+
+
+#oneHelp
+    +setSquare(100%)
+    +flexHVC
+    text-align: center
+    
+    header.app
+        .logotype
+            position: relative
+            z-index: 1
+            .icon-bg i
+                color: $c-i-green
+
+            .w-bg
+                background-color: $c-i-green
+        .trans-band
+            z-index: 0
+    .end
+        color: $c-g205
+    
+    

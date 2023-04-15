@@ -1,0 +1,88 @@
+$h-footer: 96px
+$h-header: 160px
+$h-header-mobile: 80px
+$h-footer-mobile: 48px
+$h-menu: 48px
+$h-subfooter: 16px
+
+html
+    +setFixedWidth(100%)
+    +setFixedHeight(100%)
+    +customNoScrollBar
+
+body
+    +setSquare(100%)
+    
+#__layout, #__nuxt, #onePage, #oneHelp
+    +setSquare(100%)
+    
+#onePage, #oneHelp
+    header, footer, #onePageContent
+        width: 100%
+    
+    header.app
+        height: 160px
+        position: fixed
+        top: 0
+        z-index: 4
+        
+    .sub-header
+        position: fixed
+        top: $h-header
+        left: 0
+        width: 100%
+        height: 8px
+        z-index: 3
+        
+    #onePageContent
+        height: calc(100% - #{$h-header})
+        width: 100%
+        position: relative
+        top: $h-header
+        
+    footer
+        position: fixed
+        height: 0
+        bottom: 0
+        left: 0
+        z-index: 5
+    
+    #oneHelpMenu
+        position: fixed
+        top: 0
+        left: 0
+    
+    #oneHelpContent
+        position: relative
+        
+    #oneHelpContent
+        top: $h-header
+    
+@media (max-width: 600px)
+    #onePage,#oneHelp
+        
+        header.app
+            +setFixedHeight($h-header-mobile)
+            position: fixed
+        .sub-header
+            position: fixed
+            top: $h-header-mobile
+    
+        #onePageContent
+            top: $h-header-mobile
+            height: calc(100% - #{$h-header-mobile} - #{$h-footer-mobile})
+        #oneHelpContent
+            top: $h-header-mobile
+        #oneHelpMenu
+            position: fixed
+            top: initial
+            left: initial
+            bottom: 0
+            right: 0
+        
+        footer
+            min-height: $h-footer-mobile
+        
+        
+        
+        

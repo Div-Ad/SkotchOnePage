@@ -1,0 +1,1022 @@
+.is-mobile
+    
+    *
+        button:focus
+            transform: scale(1)
+        button:hover
+            border-radius: 3px
+
+    ////////////////
+    // Components //
+    ////////////////
+    
+    //- Userbar -//
+    
+    #userBar
+        +setFixedHeight(48px)
+        .icon
+            +setActionIcon(48px)
+            font-size: 32px
+        #notificationIcon
+            i.ic-bell
+                font-size: 28px
+            .number
+                top: 6px
+                right: 6px
+                span
+                    font: 300 12px/12px $small
+        .icon#menuIcon
+            top: -28px
+            .icon-menu
+                top: 44px
+            .icon-menu .bar
+                background-color: $c-g245
+                height: 2px
+                width: 14px
+                margin: 2px
+            .icon-skotch i
+                color: lighten($c-bnf, 14%)
+                background-color: $c-bnf
+            &.active
+                top: 0
+                background-color: lighten($c-bnf, 21%)
+                .icon#menuIcon .icon-bg
+                    background-color: lighten($c-bnf, 21%)
+                .icon-skotch i
+                    color: lighten($c-bnf, 21%)
+                .icon-text
+                    transform: rotate(90deg) scale(3.75)
+                    top: 26px
+
+        .icon#menuIcon, .icon#menuIcon .icon-bg
+            background-color: lighten($c-bnf, 14%)
+        .app-name
+            font-size: 10px
+        .swipe-handler
+            display: block
+
+    //- menu & notification -//
+
+    section#menu .menu-content, section#notification .notification-content
+        max-width: 480px
+        min-width: 320px
+        width: 100vw
+    
+    @media(min-width: 768px)
+        section#notification .notification-content
+            +setFixedWidth(50vw)
+    
+    section#menu .menu-content
+        +setFixedHeight(calc(100% - 48px))
+        top: 48px
+        &:before
+            content: "\e91e"
+            font-family: $icon
+            font-size: 480px
+            transform: rotate(180deg)
+            position: absolute
+            left: 0
+            bottom: -320px
+            color: darken($c-bnf, 3.5%)
+
+    //- notification -//
+    
+    section#notification .notification-content
+        +setFixedHeight(100%)
+        top: 48px
+
+    #notification
+        .notification-list
+            +setFixedHeight(calc(100% - 48px))
+        .notification-item
+            padding-bottom: 20px
+        .ct-avatar
+            +setSquare(40px)
+            .firstname-letter:first-letter, .lastname-letter:first-letter
+                font: 400 20px/20px $condensed
+        .main-content
+            line-height: 18px
+        .notification-options .icon
+            +setSquare(40px)
+            opacity: 1!important
+            &.discard
+                right: 44px
+        .part-2
+            margin-left: calc(40px + 8px) //-thumbnail width + margin right of thumbnail
+            margin-top: -8px
+            +setFixedWidth(calc(100% - 56px - 8px))
+            p.sk-description
+                background-color: transparent
+                padding: 0 0 12px
+                &:before
+                    color: $c-g205
+            i.ic-triangle-right
+                display: none
+
+    //- Nav -//
+    
+    #nav
+        +setFixedHeight(56px)
+        +setFixedWidth(100vw)
+        padding: 0 8px 8px
+        left: 0
+        background-color: rgba(255,255,255,0.75)
+        .icon-bg
+            display: none
+
+    #quickCreateIcon, #goBack
+        display: flex
+        height: 100%
+        button
+            +setFixedHeight(inherit)
+            +setFixedWidth(100%)
+
+    #quickCreateIcon
+        width: 100%
+        max-width: 100%
+        overflow: hidden
+        position: relative
+        background-color: $c-bnf
+        &.br4
+            border-radius: 0 4px 4px 0
+        &:before
+            content: ""
+            background-image: url("~assets/triangle-w-16.svg")
+            background-repeat: repeat-y
+            height: 100%
+            position: absolute
+            left: 0
+            top: 0
+            z-index: 0
+            width: 12px
+
+    #goBack
+        border-radius:  4px 0 0 4px
+        background-color: lighten($c-bnf, 7%)
+        min-width: 64px
+        transform: rotate(0.5turn)
+
+    ////////////////
+    // Containers //
+    ///////////////
+    *
+        &::-webkit-scrollbar
+            width: 0px!important
+
+    .container
+        +setFixedHeight(calc(100% - 48px)) //- minus userbar
+        top: 48px
+        padding: 0 16px 8px
+
+    .container-with-tabs, .container-with-bottom-button
+        +setFixedHeight(calc(100% - 48px)) //- minus userbar
+        top: 48px
+    
+    .container-post-tabs
+        +setFixedHeight(calc(100% - 32px)) //- minus tabs
+        padding-bottom: 56px // minus nav
+        +setFixedWidth(calc(100% + 8px))
+        padding-right: 8px
+        
+    .bookmarked-skotchlist .container-post-tabs
+            +setFixedHeight(100%)
+            padding-bottom: 56px // minus nav
+    
+    #PageTitle, .page-title
+        +setFixedHeight(64px)
+        padding: 0
+        margin: 0
+        border-bottom: 2px solid $c-g215
+        .toggle
+            i
+                font-size: 16px
+        .help
+            i
+                font-size: 32px
+                &:hover
+                    color: $c-g205
+            &.active i:hover
+                color: $c-i-blue
+        
+        .filter, .sort
+            &:hover i, &:hover span
+                color: $c-g50
+            &.active i, &.active span
+                color: $c-bnf-red
+            &.active:hover i, &.active:hover span
+                color: $c-bnf-red!important
+            &.sorting-active i, &.sorting-active:hover i, &.sorting-active span, &.sorting-active:hover span
+                color: $c-bnf-gold!important
+
+        .title-group
+            +setFixedHeight(48px)
+            .icon
+                margin-right: 8px
+                i
+                    font-size: 32px
+            h2, .skl-title
+                font: 400 20px/28px $condensed
+
+    #privacy, #legal
+        h3
+            margin-top: 16px
+        p, ul, li
+            font-size: 13px
+    
+    .tabs
+        +setFixedHeight(32px)
+        padding: 0 12px
+        +setFixedWidth(calc(100%))
+        position: relative
+
+        .icon.nav
+            position: absolute
+            left: 16px
+            +setActionIcon(32px)
+            border-radius: 4px 4px 0 0
+            i
+                color: $c-white
+                font-size: 16px
+        
+        .tab
+            +setFixedWidth(calc(100% / 9 * 4))
+            +setFixedHeight(32px)
+            padding: 0 4px 0 8px
+            font: 300 16px/16px $condensed
+            border-radius: 4px 4px 0 0
+            animation: tabs-out 0.25s backwards
+            &.active
+                +setFixedWidth(calc(100% / 9 * 5))
+                animation: tabs-in 0.25s
+            .options .icon
+                i.ic-help-form
+                    font-size: 20px
+                    margin-right: -8px
+            span.sup
+                font-size: 12px
+                padding: 4px 4px
+                border-radius: 0 4px 0 4px
+                opacity: 0.65
+            &.new-entry
+                &.active span.sup
+                    opacity: 0.75
+                span.sup
+                    opacity: 1
+
+        &.has-nav
+            padding: 0 12px 0 48px
+
+    /////////////////////////
+    // Components & idPage //
+    /////////////////////////
+    
+    //- Signin -//
+    
+    #signin, #reset, #verif
+        justify-content: flex-start
+        +setFixedHeight(100%)
+
+        .mt16
+            margin-top: 8px!important
+
+        section.app
+            align-items: flex-start
+            justify-content: flex-start
+            flex-direction: row
+            text-align: left
+            +setFixedHeight(96px)
+            position: relative
+
+            .logotype
+                margin-left: 32px
+                transition-duration: 0.25s!important
+                .w-bg
+                    +setFixedWidth(32px)
+                    position: relative
+
+                .icon-skotch
+                    +setIcon(32px)
+                    margin-top: -4px
+                    i
+                        font-size: 32px
+            .app-txt
+                justify-content: center
+                +setFixedHeight(80px)
+                margin-top: 0
+                margin-left: 16px
+                .app-name
+                    font: 400 16px/32px $small
+                    margin-right: 0
+                .beta
+                    top: -8px
+                .app-baseline
+                    font: 500 11px/12px $condensed
+                    letter-spacing: 1px
+                    word-spacing: 0.5px
+            .trans-band
+                +setFixedHeight(calc(100% - 48px))
+                +setFixedWidth(32px)
+                position: fixed
+                left: 32px
+
+        section.cgu-privacy
+            bottom: -16px
+
+        .login-form, .register-form, .reset-form
+            padding: 12px
+            button.register-validate
+                margin-top: 16px
+            button.login-validate
+                margin-top: 0
+
+        .login-signin-forms
+            position: fixed
+            max-height: calc(100% - 96px)
+            bottom: 16px
+            left:  16px
+            .idp-login
+                .icon
+                    +setSquare(48px)
+                    i
+                        font-size: 24px
+        section
+            width: calc(100vw - 16 * 2px)
+            &.login-form, &.register-form, &.reset-form
+                max-height: calc(100%)
+                +custom8pxScrollBar
+                padding-bottom: 112px
+
+    //- Config -//
+    
+    #config
+        
+        .title h3
+            font-size: 18px
+            margin: 0 0 8px
+        section
+            &.profile, &.network, &.account, &.notifications, &.pwa-install
+                padding: 8px 0
+        .account
+            .input-container
+                max-width: 425px
+            input, button
+                display: block
+                margin-bottom: 4px
+            input
+                width: 100%
+                max-width: 425px
+
+        .contact
+            +setSquare(90px)
+            .ct-avatar
+                +setSquare(90px)
+                img
+                    object-fit: cover
+                    width: 90px
+                    height: 90px
+                    border-radius: 4px
+                    background-color: white
+                .background
+                    +setSquare(90px)
+                    border-radius: 50%
+                    +flexHVC
+                    .firstname-letter, .lastname-letter
+                        font-size: 0
+                        &:first-letter
+                            font: 400 42px/42px $condensed
+    
+    //- First Steps -//
+    
+    #firstSteps
+        +setFlexBox(100vw, 100%, center, flex-start, column)
+
+        .page-title
+            padding: 0
+
+        .scrollable-content
+            +custom8pxScrollBar
+            +setFixedHeight(calc(100% - 64px))
+
+        section
+            +setFixedWidth(100vw)
+            +setFixedHeight(calc(100% - 64px))
+            &#todolistfirstSelect .page-title, &#sklFirstSelect .page-title
+                padding: 0
+        
+        section#stepCounter
+            +setFixedHeight(64px)
+            bottom: 0
+        
+        .step-trigger
+            +setFlexBox(100vw, 32px, center, space-between, row)
+            padding: 0 16px
+            
+            button
+                +setFixedWidth(120px)
+                padding: 0 !important
+                .text
+                    padding: 0 8px
+                .icon
+                    +setIcon(32px)
+                    i
+                        font-size: 16px
+        .content
+            margin: 16px
+        
+        .content-gray
+            margin: 16px
+            padding: 8px
+            border-radius: 4px
+    
+    #stepCounter
+        .step-group
+            +setFlexBox(100vw, 48px, center, center, row)
+            .box-container
+                +setIcon(32px)
+                margin: 0 12px
+            .step
+                +setIcon(32px)
+                border-radius: 50%
+                &.active
+                    margin: 4px
+    
+    //- Dashboard -//
+    
+    #dashboard
+        top: 48px
+        .overviews
+            position: relative
+
+        .design-bar
+            +setFlexBox(calc(100vw - 4px), 14px!important, center, center, row)
+            top: 80px
+            z-index: 2
+
+        .contact-list, .contact-search-content
+            +setFixedHeight(calc(100%))
+            +setFixedWidth(calc(100vw + 8px))
+            +custom8pxScrollBar
+        
+        .skl-list
+            +setFixedHeight(100%)
+            +setFixedWidth(calc(100vw + 8px))
+            +custom8pxScrollBar
+            padding: 16px 8px 8px 8px
+
+        .contact-list
+            padding: 16px 8px 8px 8px
+
+        .contact-search-trigger
+            .icon i
+                font-size: 40px
+            .ct-infos
+                justify-content: flex-start
+                text-align: left
+        
+        .ct-search-input
+            +setFlexBox(100%, 80px, center, flex-start, row)
+            padding: 0 16px
+            margin-top: 0
+            margin-left: 0
+            .input-group
+                width: 100%
+            i.ic-arrow
+                font-size: 20px!important
+            input
+                +setFixedWidth(calc(100% - 48px - 48px))
+            button
+                +setActionIcon(48px)
+                i
+                    font-size: 24px
+            .warning
+                top: initial
+                bottom: -28px
+                right: initial
+                left: 0
+                border-radius: 0 0 4px 4px
+                min-width: initial
+        
+        .ct-past-request, .ct-search-results, .ct-pending-request
+            .page-title
+                padding: 0
+                h2
+                    line-height: 1
+            .contact-list-research
+                +setFixedWidth(100%)
+                padding: 16px
+                .contact
+                    +setFixedWidth(100%)
+                    justify-content: space-between
+                    margin: 0 8px 8px 0
+                    padding-right: 0
+                    .group
+                        +flexVC
+                        min-width: 50%
+                        max-width: 100%
+                        flex-direction: row
+                        margin: 0
+                    .ct-infos
+                        text-align: left
+                        justify-content: flex-start
+                        margin-left: 8px
+                .request-action
+                    width: initial
+                    button, .confirmation-message
+                        +setFlexBox(100%, 32px, center, center, row)
+                        font: 300 14px/16px $condensed
+                        text-transform: none
+                        &:focus
+                            border-radius: 2px
+
+    //- contact details page -//
+
+    #contactDetails
+        #PageTitle
+            .contact-inline
+                .ct-avatar
+                    +setSquare(48px)
+                    img
+                        width: 48px
+                        height: 48px
+                    .background
+                        +setSquare(48px)
+                        .firstname-letter, .lastname-letter
+                            &:first-letter
+                                font: 400 24px/24px $condensed
+                .ct-infos
+                    font-size: 20px
+                    margin-left: 8px
+                .icon.share
+                    display: none
+                    margin-left: 8px
+                    i
+                        font-size: 24px
+        
+        #ContactInfo
+            padding: 8px 16px 0
+            font-size: 13px
+
+        .skotchlist-content
+            padding: 0
+            #skotchOut, #skotchIn
+                padding: 0 16px
+                +setFixedWidth(100%)
+                .skotch
+                    .second-part .sk-description p
+                        font-size: 13px
+                    .sk-skotchback
+                        button.icon:hover
+                            background-color: transparent
+                            border: 2px solid $c-g215
+                            i
+                                color: $c-g170
+
+            .skl-icon .icon
+                +setFlexBox(32px, 48px, center, flex-start, row)
+                i
+                    font-size: 24px
+                    color: $c-g80
+            
+            .sk-group
+                .sk-title
+                    span.result
+                        font: 14px/14px $condensed
+                    
+                    span.skl-tag-in-text
+                        font: 11px/11px $slab
+                        top: -1px
+                        margin-left: 0
+
+    //- Skotchlist Page -//
+    
+    .container-with-tabs#skl
+        top: 48px
+        +setFixedWidth(100vw)
+
+        section.content
+            +setFixedHeight(calc(100% - 64px - 32px))
+            +custom8pxScrollBar
+        
+        section#subHeader
+            #PageTitle
+                padding: 0 4px
+                .tdl-icon.icon i, .skl-icon.icon i
+                    font-size: 32px
+                .icon.filter:hover span
+                    color: $c-g50
+        
+        #skTagFilters
+            +setFixedWidth(calc(100% - 32px))
+            .skl-tag
+                margin: 0
+                min-width: calc(100% / 4)
+                font-size: 11px
+        
+        #sortOptions
+            position: absolute
+            right: calc((32px + 4px) * 2 + 8px)
+        
+        #skSort
+            .option
+                width: 100%
+                justify-content: space-between
+        
+        #sklAllSkotch
+            padding: 16px 16px 8px
+            +setFixedWidth(100%)
+            .no-content
+                +setFixedHeight(calc(100vh - 48px - 32px - 64px - 16px - 48px))
+
+
+    //- Todolist Select -//
+    
+    #sklSelect
+        #PageTitle
+            padding: 0
+        .introduction
+            font-size: 14px
+            line-height: 20px
+
+    #sklList
+        padding: 16px 16px!important
+        .skotchlist
+            +setFixedWidth(100%)
+            +setFixedHeight(48px)
+            margin: 0
+            
+            .skl-title
+                margin-left: 0
+                border-left-width: 0
+                transition: all 0.25s
+
+            .skl-icon
+                +setFixedHeight(48px)
+                overflow: hidden
+                +setFixedWidth(0)
+                transition: all 0.25s
+
+            &:hover .skl-icon i
+                font-size: 32px!important
+            
+            &.active
+                .skl-icon
+                    +setFixedWidth(48px)
+                .skl-title
+                    margin-left: 48px
+                    border-left-width: 2px
+
+            .skl-options
+                .skl-select, .skl-share
+                    +setIcon(48px)
+                    i
+                        font-size: 24px
+                        &.ic-list-add
+                            display: block
+                        &.ic-ok-c-b24
+                            display: none
+                    &.active
+                        i.ic-list-add
+                            display: none
+                        i.ic-ok-c-b24
+                            display: block
+
+        .skl-select-group
+            padding: 16px 0
+
+        .skl-tag-list
+            margin-top: 8px
+            .skl-tag
+                +setFixedHeight(20px)
+                padding: 0 6px
+                margin: 0 8px 0 0
+        .skl-options
+            .skl-select
+                +setSquare(48px)
+                i
+                    font-size: 16px
+    
+    #sklSelectValidateButton
+        background-color: white
+        +setFixedWidth(calc(100vw))
+        +setFixedHeight(48px)
+        bottom: 0
+        left: 0
+        position: fixed
+        .icon button
+            +setFixedWidth(calc(100vw - 16px))
+            +setFixedHeight(48px)
+            border-radius: 4px
+            font-size: 20px
+            text-transform: none
+            bottom: 8px
+            left: 8px
+            box-shadow: inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.1),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12)
+
+    //- QuickCreate -//
+    
+    #quickCreate .content
+        +setSquare(100%)
+        align-items: flex-start
+        justify-content: flex-start
+        position: fixed
+        top: 0
+        left: 0
+
+        .sk-create-form
+            +setFixedHeight(calc(100%))
+            padding-bottom: 48px
+            +custom8pxScrollBar
+
+            .form-header
+                h2
+                    font-size: 24px
+                button.close
+                    display: none
+                .skotch-piece
+                    +setIcon(48px)
+                    margin-top: -16px
+                    i
+                        font-size: 48px
+                        color: rgba(0,0,0,0.1)
+            
+            .sk-create
+                select
+                    +setFixedHeight(48px)
+                textarea
+                    min-height: 80px
+                .sk-url, .ct-search-input
+                    .input-group
+                        input
+                            border-left-width: 48px
+                        .icon
+                            +setSquare(48px)
+                            i.ic-internet-gc
+                                font-size: 24px
+                            i.ic-link-2
+                                font-size: 16.5px!important
+            
+            .skotch-creation
+                height: calc(100% - 64px)
+                padding: 0px 16px 16px 0
+                &::-webkit-scrollbar
+                    width: 3px!important
+            
+            .contact-selection
+                height: calc(100% - 64px)
+                +setFixedWidth(calc(100% + 16px))
+                padding-right: 16px
+                &::-webkit-scrollbar
+                    width: 4px!important
+                    padding-left: 8px
+                .contact-list-research
+                    .contact
+                        +setFixedHeight(48px)
+                        margin-bottom: 8px
+                        .ct-avatar
+                            +setSquare(40px)
+                            overflow: hidden
+                            img
+                                width: 40px
+                                height: 40px
+                            .background
+                                +setSquare(40px)
+
+        .options
+            position: fixed
+            bottom: 0
+            left: 0
+            margin: 0
+            +setFixedHeight(48px)
+            .empty-div
+                display: none
+            button.icon
+                min-width: 25%
+                width: 50%
+                max-width: 100%
+                border-radius: 0
+                
+
+    /////////////////
+    // Item Design //
+    /////////////////
+
+    //- tooltip -//
+
+    .ttp-trig:hover .ttp-txt
+        display: none !important
+    
+    //- skl Design -//
+    
+    .skotchlist
+        +setFixedWidth(calc(100% - 20px))
+        width: calc(100%)
+        border-radius: 3px
+        margin: 6px
+        
+        .skl-title
+            font: 300 20px/20px $condensed
+            padding-left: 12px
+
+        &:hover .skl-icon i
+            font-size: 32px
+
+        &#sklSelectTrigger i
+            font-size: 24px
+    
+    #dashboard .design-bar.thumbnail
+        +setFixedHeight(8px)
+
+    #dashboard .thumbnail .skl-list
+        padding: 6px
+
+    .thumbnail .skotchlist
+        +setSquare(calc(100vw / 3 - 12px / 3 - 16px)!important) //- total width / 3 MINUS Total padding / 3 MINUS total item margins
+        min-height: 80px!important
+        margin: 8px
+        
+        .skl-title
+            text-align: center
+            font: 12px/12px $condensed
+            color: lighten($c-bnf, 7%)
+            padding: 0 6px 6px
+            display: none
+
+        .skl-icon
+            .icon i
+                font-size: 48px
+                color: lighten($c-bnf, 7%)
+                &.ic-note-list
+                    position: relative
+                    right: -4px
+        
+        .sk-counter
+            right: 0
+            top: 2px
+            .icon
+                +setIcon(24px)
+                i
+                    transition: none
+                    font-size: 28px
+                    color: lighten($c-bnf, 14%)
+            span
+                font: 11px/12px $small
+                top: -5px
+                color: white
+        
+        &#PinList
+            .sk-counter
+                top: -9px
+                right: 0
+            .skl-icon
+                background-color: transparent
+                i
+                    bottom: initial
+                    font-size: 48px
+    
+    //- SkotchDesign / Sk Design-//
+
+    .skotch
+        margin-bottom: 8px
+        min-height: 48px
+        &:after
+            width: 4px
+            background: url("~assets/triangle-w-6.svg") top left/4px repeat-y
+        .first-part
+            padding-left: 10px
+            .ct-avatar
+                +setSquare(32px)
+                margin-right: 8px
+                .firstname-letter, .lastname-letter
+                    &:first-letter
+                        font: 400 16px/16px $condensed
+            .sk-info-container
+                padding: 6px 0
+            .sk-name, .skl-tag, .sk-link, .ic-bookmark
+                margin: 2px 4px 2px 0
+            .sk-name
+                font-size: 14px
+            .skl-tag
+                padding: 0 4px
+                +setFixedHeight(16px)
+                font-size: 11px
+        
+        .sk-details-trigger, .sk-skotchback
+            +setFixedWidth(32px)
+            button.icon i.ic-options-b24
+                font-size: 24px
+
+        .second-part
+            .sk-description
+                p
+                    padding: 12px
+                    font-size: 13px
+
+            .sk-options
+                .icon
+                    i
+                        color: rgba(50,50,50,0.75)
+                    &:hover i, &.active i
+                        color: rgba(50,50,50,0.75)
+                        
+                .search-options
+                    button.icon
+                        i
+                            color: white
+        
+    .skotchback-container
+        top: calc(48px + 32px)
+
+    //- contactDesign -//
+    
+    .contact
+        +setFixedWidth(calc(100% - 8px * 2))
+        +setFixedHeight(40px)
+        flex-direction: row
+        margin: 6px
+        padding-right: 64px
+        
+        .ct-infos
+            align-content: center
+            margin: 0 0 0 12px
+            font-size: 14px
+            .ct-firstname
+                margin-left: 0
+        .part-2
+            align-items: flex-start
+            margin-left: 16px
+        .log
+            align-items: center
+            display: flex
+
+        .ct-avatar
+            +setSquare(40px)
+            .background
+                .firstname-letter, .lastname-letter
+                    &:first-letter
+                        font: 400 20px/20px $condensed
+        
+        .ct-options
+            +flexVC
+            +setFixedHeight(40px)
+            position: absolute
+            overflow: hidden
+            .icon
+                +setActionIcon(32px)
+                margin-left: 4px
+                i
+                    font-size: 24px
+                &.friend-profile
+                    display: flex
+
+    /////////////
+    // General //
+    /////////////
+    
+    .input-container
+        width: 100%
+
+    #config .account .input-container
+        width: 100%
+
+    input, select
+        +setFixedHeight(48px)
+    
+    .input-group
+        .icon
+            +setIcon(48px)
+            i
+                font-size: 24px!important
+        input.icon-before
+            +setFixedHeight(48px)
+            border-left-width: 48px
+    
+    .ttp-txt
+        display: none
+
+    ////////////////
+    // Media Query //
+    ////////////////
+
+    @media (min-width: 600px)
+        .skotchlist
+            +setFixedWidth(calc(50% - 20px))
+
+        .thumbnail .skotchlist, .thumbnail .skotchlist.skl-select
+            +setSquare(calc(100vw / 4 - 16px / 4 - 16px)!important)
+            .skl-icon .icon i
+                font-size: 40px!important
+
+    @media (min-width: 768px)
+        .skotchlist
+            +setFixedWidth(calc(100% / 3 - 20px))
+
+        .thumbnail .skotchlist, .thumbnail .skotchlist.skl-select
+            +setSquare(calc(100vw / 5 - 16px / 5 - 16px)!important)
+            .skl-icon .icon i
+                font-size: 48px
+
+    @media (min-width: 1024px)
+        .thumbnail .skotchlist, .thumbnail .skotchlist.skl-select
+            +setSquare(calc(100vw / 7 - 16px / 7 - 16px)!important)
+            .skl-icon .icon i
+                font-size: 48px
