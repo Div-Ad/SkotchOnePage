@@ -1,5 +1,4 @@
 export default {
-    ssr: true,
     /*
     ** Headers of the page
     */
@@ -83,5 +82,8 @@ export default {
     generate: {
         dir: 'docs',
         subFolders: false
+    },
+    router: {
+        base: '/'
     }
 }
