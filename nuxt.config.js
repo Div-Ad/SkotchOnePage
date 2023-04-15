@@ -83,7 +83,8 @@ export default {
         dir: 'docs',
         subFolders: false
     },
+    target: 'static',
     router: {
-        base: '/'
+        base: '/SkotchOnePage/'
     }
 }
